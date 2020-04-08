@@ -1,99 +1,26 @@
 ---
 author-meta:
-- John Doe
-- Jane Roe
+- Chaya D Stern
+- Christopher I Bayly
+- Daniel G A Smith
+- Josh Fass
+- Lee-Ping Wang
+- David L Mobley
+- John D Chodera
 bibliography:
 - content/manual-references.json
-date-meta: '2020-04-07'
-header-includes: '<!--
-
-  Manubot generated metadata rendered from header-includes-template.html.
-
-  Suggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html
-
-  -->
-
-  <meta name="dc.format" content="text/html" />
-
-  <meta name="dc.title" content="Manuscript Title" />
-
-  <meta name="citation_title" content="Manuscript Title" />
-
-  <meta property="og:title" content="Manuscript Title" />
-
-  <meta property="twitter:title" content="Manuscript Title" />
-
-  <meta name="dc.date" content="2020-04-07" />
-
-  <meta name="citation_publication_date" content="2020-04-07" />
-
-  <meta name="dc.language" content="en-US" />
-
-  <meta name="citation_language" content="en-US" />
-
-  <meta name="dc.relation.ispartof" content="Manubot" />
-
-  <meta name="dc.publisher" content="Manubot" />
-
-  <meta name="citation_journal_title" content="Manubot" />
-
-  <meta name="citation_technical_report_institution" content="Manubot" />
-
-  <meta name="citation_author" content="John Doe" />
-
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
-
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
-
-  <meta name="twitter:creator" content="@johndoe" />
-
-  <meta name="citation_author" content="Jane Roe" />
-
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
-
-  <meta name="citation_author_institution" content="Department of Whatever, University of Something" />
-
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
-
-  <link rel="canonical" href="https://ChayaSt.github.io/wbo-manuscript/" />
-
-  <meta property="og:url" content="https://ChayaSt.github.io/wbo-manuscript/" />
-
-  <meta property="twitter:url" content="https://ChayaSt.github.io/wbo-manuscript/" />
-
-  <meta name="citation_fulltext_html_url" content="https://ChayaSt.github.io/wbo-manuscript/" />
-
-  <meta name="citation_pdf_url" content="https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf" />
-
-  <link rel="alternate" type="application/pdf" href="https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf" />
-
-  <link rel="alternate" type="text/html" href="https://ChayaSt.github.io/wbo-manuscript/v/7c0f9c30fe03a6e264e19d08f2337266a4ea3e3e/" />
-
-  <meta name="manubot_html_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/7c0f9c30fe03a6e264e19d08f2337266a4ea3e3e/" />
-
-  <meta name="manubot_pdf_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/7c0f9c30fe03a6e264e19d08f2337266a4ea3e3e/manuscript.pdf" />
-
-  <meta property="og:type" content="article" />
-
-  <meta property="twitter:card" content="summary_large_image" />
-
-  <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
-
-  <link rel="mask-icon" href="https://manubot.org/safari-pinned-tab.svg" color="#ad1457" />
-
-  <meta name="theme-color" content="#ad1457" />
-
-  <!-- end Manubot generated metadata -->'
+date-meta: '2020-04-08'
+header-includes: "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta name=\"dc.title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta name=\"citation_title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta property=\"og:title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta property=\"twitter:title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta name=\"dc.date\" content=\"2020-04-08\" />\n<meta name=\"citation_publication_date\" content=\"2020-04-08\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Chaya D Stern\" />\n<meta name=\"citation_author_institution\" content=\"Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-6200-3993\" />\n<meta name=\"twitter:creator\" content=\"@SternChaya\" />\n<meta name=\"citation_author\" content=\"Christopher I Bayly\" />\n<meta name=\"citation_author_institution\" content=\"OpenEye Scientific Software\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-9145-6457\" />\n<meta name=\"citation_author\" content=\"Daniel G A Smith\" />\n<meta name=\"citation_author_institution\" content=\"The Molecular Sciences Software Institute, Blacksburg, Virginia 24060 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-8626-0900\" />\n<meta name=\"twitter:creator\" content=\"@dga_smith\" />\n<meta name=\"citation_author\" content=\"Josh Fass\" />\n<meta name=\"citation_author_institution\" content=\"Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3719-266X\" />\n<meta name=\"twitter:creator\" content=\"@maxentile\" />\n<meta name=\"citation_author\" content=\"Lee-Ping Wang\" />\n<meta name=\"citation_author_institution\" content=\"Department of Chemistry, University of California, Davis, Califnornia 95616 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3072-9946\" />\n<meta name=\"citation_author\" content=\"David L Mobley\" />\n<meta name=\"citation_author_institution\" content=\"Departments of Pharmaceutical Sciences and Chemistry, University of California, Irvine, California 92697\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0002-1083-5533\" />\n<meta name=\"twitter:creator\" content=\"@davidmobley\" />\n<meta name=\"citation_author\" content=\"John D Chodera\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_institution\" content=\"BIH Einstein Visiting Professor, Charit\xE9 Universit\xE4tsmedizin, Berlin\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-0542-119X\" />\n<meta name=\"twitter:creator\" content=\"@jchodera\" />\n<link rel=\"canonical\" href=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta property=\"og:url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta property=\"twitter:url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta name=\"citation_pdf_url\" content=\"https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->"
 keywords:
-- markdown
-- publishing
-- manubot
+- forcefield
+- force-field
+- cheminformatics
 lang: en-US
 manubot-clear-requests-cache: false
 manubot-output-bibliography: output/references.json
 manubot-output-citekeys: output/citations.tsv
 manubot-requests-cache-path: ci/cache/requests-cache
-title: Manuscript Title
+title: Capturing through-bond non-local effects in torsion parameters using fractional bond orders
 ...
 
 
@@ -103,337 +30,191 @@ title: Manuscript Title
 
 <small><em>
 This manuscript
-([permalink](https://ChayaSt.github.io/wbo-manuscript/v/7c0f9c30fe03a6e264e19d08f2337266a4ea3e3e/))
+([permalink](https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/))
 was automatically generated
-from [ChayaSt/wbo-manuscript@7c0f9c3](https://github.com/ChayaSt/wbo-manuscript/tree/7c0f9c30fe03a6e264e19d08f2337266a4ea3e3e)
-on April 7, 2020.
+from [ChayaSt/wbo-manuscript@a787810](https://github.com/ChayaSt/wbo-manuscript/tree/a7878107a2b0f16845c287e943a4ead9fd7beff1)
+on April 8, 2020.
 </em></small>
 
 ## Authors
 
 
 
-+ **John Doe**<br>
++ **Chaya D Stern**<br>
     ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
+    [0000-0001-6200-3993](https://orcid.org/0000-0001-6200-3993)
     · ![GitHub icon](images/github.svg){.inline_icon}
-    [johndoe](https://github.com/johndoe)
+    [ChayaSt](https://github.com/ChayaSt)
     · ![Twitter icon](images/twitter.svg){.inline_icon}
-    [johndoe](https://twitter.com/johndoe)<br>
+    [SternChaya](https://twitter.com/SternChaya)<br>
   <small>
-     Department of Something, University of Whatever
-     · Funded by Grant XXXXXXXX
+     Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA; Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA
+     · Funded by ['NSF GRFP DGE-1257284', 'MolSSI NSF ACI-1547580', 'NSF CHE-1738979']
   </small>
 
-+ **Jane Roe**<br>
++ **Christopher I Bayly**<br>
     ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
+    [0000-0001-9145-6457](https://orcid.org/0000-0001-9145-6457)
     · ![GitHub icon](images/github.svg){.inline_icon}
-    [janeroe](https://github.com/janeroe)<br>
+    [cbayly13](https://github.com/cbayly13)<br>
   <small>
-     Department of Something, University of Whatever; Department of Whatever, University of Something
+     OpenEye Scientific Software
+  </small>
+
++ **Daniel G A Smith**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [0000-0001-8626-0900](https://orcid.org/0000-0001-8626-0900)
+    · ![GitHub icon](images/github.svg){.inline_icon}
+    [dgasmith](https://github.com/dgasmith)
+    · ![Twitter icon](images/twitter.svg){.inline_icon}
+    [dga_smith](https://twitter.com/dga_smith)<br>
+  <small>
+     The Molecular Sciences Software Institute, Blacksburg, Virginia 24060 USA
+     · Funded by ['NSF OAC-1547580', 'Open Force Field Consortium']
+  </small>
+
++ **Josh Fass**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [0000-0003-3719-266X](https://orcid.org/0000-0003-3719-266X)
+    · ![GitHub icon](images/github.svg){.inline_icon}
+    [maxentile](https://github.com/maxentile)
+    · ![Twitter icon](images/twitter.svg){.inline_icon}
+    [maxentile](https://twitter.com/maxentile)<br>
+  <small>
+     Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA; Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA
+     · Funded by ['NSF CHE-1738979']
+  </small>
+
++ **Lee-Ping Wang**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [0000-0003-3072-9946](https://orcid.org/0000-0003-3072-9946)
+    · ![GitHub icon](images/github.svg){.inline_icon}
+    [leeping](https://github.com/leeping)<br>
+  <small>
+     Department of Chemistry, University of California, Davis, Califnornia 95616 USA
+  </small>
+
++ **David L Mobley**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [0000-0002-1083-5533](https://orcid.org/0000-0002-1083-5533)
+    · ![GitHub icon](images/github.svg){.inline_icon}
+    [davidlmobley](https://github.com/davidlmobley)
+    · ![Twitter icon](images/twitter.svg){.inline_icon}
+    [davidmobley](https://twitter.com/davidmobley)<br>
+  <small>
+     Departments of Pharmaceutical Sciences and Chemistry, University of California, Irvine, California 92697
+     · Funded by ['NIH R01GM132386']
+  </small>
+
++ **John D Chodera**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [0000-0003-0542-119X](https://orcid.org/0000-0003-0542-119X)
+    · ![GitHub icon](images/github.svg){.inline_icon}
+    [jchodera](https://github.com/jchodera)
+    · ![Twitter icon](images/twitter.svg){.inline_icon}
+    [jchodera](https://twitter.com/jchodera)<br>
+  <small>
+     Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA; BIH Einstein Visiting Professor, Charité Universitätsmedizin, Berlin
+     · Funded by ['NSF CHE-1738979', 'NIH R01GM132386', 'NIH P30CA008748', 'Sloan Kettering Institute']
   </small>
 
 
 
 ## Abstract {.page_break_before}
 
+Accurate small molecule force fields are crucial for predicting thermodynamic and kinetic properties of drug-like molecules in biomolecular systems.
+Torsion parameters, in particular, are essential for determining conformational distribution of molecules.
+However, they are usually fit to computational expensive quantum chemical torsion scans and generalize poorly to different chemical environments.
+Torsion parameters should ideally capture local through-space non-bonded interactions such as 1-4 steric and electrostatics and non-local through-bond effects such as conjugation and hyperconjugation.
+Non-local through-bond effects are sensitive to remote substituents and are a contributing factor to torsion parameters poor transferability.
+Here we show that fractional bond orders such as the Wiberg Bond Order (WBO) are sensitive to remote substituents and correctly captures extent of conjugation and hyperconjugation.
+We show that the relationship between WBO and torsion barrier heights are linear and can therefore serve as a surrogate to QC torsion barriers, and to interpolate torsion force constants.
+Using this approach we can reduce the number of computational expensive QC torsion scans needed while maintaining accurate torsion parameters.
+We demonstrate this approach to a set of substituted benzene rings.
 
 
+## 1. Introduction
 
-This manuscript is a template (aka "rootstock") for [Manubot](https://manubot.org/ "Manubot"), a tool for writing scholarly manuscripts.
-Use this template as a starting point for your manuscript.
+Molecular mechanics (MM) methods rely on Newtonian physics inspired empirical force field to describe the potential energy of the system and are widely used to study larger systems with $10^3$ - $10^6$ atoms [@doi:10.1016/j.neuron.2018.08.011].
+They are sufficiently cheap and accurate to study biological relevant systems and provide atomistic details of mechanisms in enzymes in solution and can reliably predict thermodynamic properties such as binding free energies [@doi:10.7554/eLife.45403; @doi:10.1021/ja508394x; CITE free energy].
+However, given the larger chemical space small small molecule force fields need to cover to adequately represent druglike molecules and common metabolites, they have lagged behind protein force fields [@doi:10.1021/acs.jctc.8b00821; @doi:10.1021/acs.jctc.5b00864].
+In MM forcefields, the potential energy is constructed with terms for bond stretching, angle bending, internal rotations, electrostatics and Lennard-Jones for attractive and repulsive forces [@doi:10.1002/jcc.540040211; @doi:10.1021/ja00124a002;@doi:10.1021/ja9621760 ].
+These free parameters in these functionals are fit to reproduce experimental and quantum chemical (QC) data.
 
-The rest of this document is a full list of formatting elements/features supported by Manubot.
-Compare the input (`.md` files in the `/content` directory) to the output you see below.
+### 1.1 The torsion functional describes the potential energy of internal rotation
 
-## Basic formatting
+The torsion functional which models internal rotation is particularly challenging to parameterize and the least transferable relative to other bonded terms for several reasons [CITE].
+First, torsion parameters are usually fit to computationally expensive QC torsion scans which introduces a bottle neck to setting up simulations.
+Second, torsion parameters are 'soft' or very flexible degrees of freedom compared to bond and angle parameters [CITE].
+Relatively small variations to the torsional potential surface can strongly influence molecular conformation distributions [CITE].
+Given how critical torsion parameters ar in determining conformation distributions in simulations, it is prudent for them to be accurately parameterized.
+Third, torsion potentials can be strongly influenced by distal substituents, an effect very difficult to represent in a force field that uses only local chemistry to define parameters.
+When parameterizing a molecular system, the force field assigns atom types, or a description of the atom's atomic number and chemical environment to every atom in the system [CITE].
+These atom types are generally defined by their local chemical environment.
+A torsion type is defined by the atom types of the four atoms involved in the torsion.
+These non-local through-bond effects are difficult to capture with local torsion types and is a contributing factor to torsion parameters' poor transferability.
 
-**Bold** __text__
+In most force fields (CHARMM [CITE], AMBER [CITE], OPLS [CITE]) the torsion potential is given by a truncated Fourier series:
 
-[Semi-bold text]{.semibold}
+$$ E_{torions} = \sum_{torsions}\sum_{n=1}^N K_{\phi, n}(1 + cos(n\phi_i - \delta_n)) $${#eq:torsion}
 
-[Centered text]{.center}
+where the sum is over torsion angles $\phi$ and multiplicities $n$.
+The force constants $K_{\phi, n} determine the barrier heights, the multiplicities $n$ determine the number of minima and the phase angles $\delta_{\phi, n} determines the phase.
+In most force fields the $N$ can go up to 6 and the phase angles $\delta$ are usually set to $0^{\circ}$ or $180^{\circ}$ to symmetrize the curve around $0^{\circ}$.
 
-[Right-aligned text]{.right}
+The torsion energy about a bond is determined by a combination of local and non-local effects from conjugation, hypercojugation, sterics, and electrostatics [CITE].
+Steric and elecrostatic interactions are, in principle, accounted for by non bonded terms in most force fields, so a torsion profile would ideally primarily capture conjugation or hyperconjugation effects, and only the 1-4 electrostatics.
+However, conjugation and hyperconjugation are non local properties and remote chemical changes can influence the extent of conjugation and/or hyperconjugation.
+These effects are not always captured by existing, locally defined torsion types.
 
-*Italic* _text_
+Discuss how previous work dealt with this problem
 
-Combined *italics and __bold__*
+### 1.2 Fractional bond orders describe the extent of bonding between two atoms
 
-~~Strikethrough~~
 
-1. Ordered list item
-2. Ordered list item
-    a. Sub-item
-    b. Sub-item
-        i. Sub-sub-item
-3. Ordered list item
-    a. Sub-item
+An MM force field first assigns each atom in the system an atom type, or a description of the atom's atomic number and chemical environment [@doi:10.1038/natrevmats.2015.4; @doi:10.1021/ci300363c].
+This reduces the number of parameters needed to describe the system because parameters developed for one atom can be transferred to other atoms in similar chemical environments.
 
-- List item
-- List item
-- List item
+Bond-stretching and angle-bending terms are considered 'hard' degrees of freedom [@doi:10.1021/acs.jcim.8b00042] which means their associated force constants are large and small deviations from $b_0$ and $\theta_0$ will result in large changes in the potential energy.
+Therefore, bond and angle terms are straight forward to parameterize.
+They have historically been fit to vibrational frequency, crystallographic and microwave data [@doi:10.1007/s10822-018-0111-4; @doi:10.1021/ja00431a045].
+QC data have also been used to fit these terms [@doi:10.1021/ja00431a045].
+Parameterizing the torsion dihedral-angle term is less trivial and are the least transferable relative to other bonded terms [@doi:10.1186/s13321-019-0371-6; @doi:10.1021/ct4003477].
+The torsion angle is a 'soft' or very flexible degree of freedom and relatively small variations to the torsional potential energy surface can strongly influence molecular conformation distributions.
+Given how critical torsion parameters are in determining conformation distributions in simulations, it is prudent for them to be accurately parameterized.
 
-subscript: H~2~O is a liquid
 
-superscript: 2^10^ is 1024.
+The torsion energy functional (equation  \ref{eq:torsion}) used to describe the energy of internal rotation of molecules is given as a sum of cosines.
+In equation @eq:torsion, the torsion angle $\phi$ is the angle between the two planes formed by the 1, 2, 3 and 2, 3, 4 atoms of four sequentially bonded atoms.
+$K_{\phi, n}$ is the torsion force constant which determines the energy barrier height, $n$ is the multiplicity which determines the number of minima and maxima in the curve, and $\delta$ is phase angle which determines the shift shift.
+The maximum value for $n$ ranges from 3 to 6, depending on the force field. These parameters are usually fit to computationally expensive QC torsion scans.
 
-[unicode superscripts](https://www.google.com/search?q=superscript+generator)⁰¹²³⁴⁵⁶⁷⁸⁹
 
-[unicode subscripts](https://www.google.com/search?q=superscript+generator)₀₁₂₃₄₅₆₇₈₉
+The physical motivation for the torsion term is to include quantum orbital effects that contribute to resistance to rotations of conjugated and higher multiplicity bonds [@doi:10.26434/chemrxiv.8279681.v1].
+The multiplicity terms, $n$, are chosen based on chemical intuition to reproduce the periodic nature of the torsion profile involved.
+In reality, the torsion energy about a central bond is determined by a combination of effects that are difficult to separate; 1-4 non-bonded interactions, through-space steric and electrostatic interactions of atoms beyond the 1-4 atoms in the torsion, and electronic delocalization such as conjugation and hypercojugation [@doi:10.1038/35079036; @doi:10.1021/jp046290d; @doi:10.1021/acs.jcim.7b00645; @doi:10.1021/acs.jcim.9b00585].
 
-A long paragraph of text.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## 2.2 Fractional bond orders
 
-Putting each sentence on its own line has numerous benefits with regard to [editing](https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line) and [version control](https://rhodesmill.org/brandon/2012/one-sentence-per-line/).
+In quantum mechanics, a molecule is a system of particles - nuclei and electrons. Chemists, however, think of molecules as atoms held together by bonds.
+The connectivity graph of molecules is a very important mental model in chemistry, based on centuries of chemical observations and knowledge.
+Many quantum chemists such as Pauling \cite{Pauling1935}, Coulson \cite{Coulson1939}, Mulliken \cite{Mulliken1955}, Wiberg \cite{Wiberg1968}, and Mayer \cite{Mayer2007} have worked on bridging the gap between the physical and chemical conception of atoms in molecules by an \textit{a poteriori} analysis of the wave function to arrive at a fractional bond order that is consistent with the chemical concept of the multiplicity of a chemical bond.
+In this thesis (Chapters 2 and 3) I show how informative the Wiberg bond order, calculated from a cheap AM1 wave function, is for solving several outstanding problems in classical force field development.
 
-Line break without starting a new paragraph by putting  
-two spaces at end of line.
+The WBO is just one form of quantum mechanical electron density based bond order calculations that
+aims to quantify the chemical bond, a key concept in chemistry, by computing the electron population
+overlap between atoms. Many other definitions have been proposed; a non-exhaustive list includes
+Pauling \cite{Pauling1935}, Coulson \cite{Coulson1939}, Mulliken \cite{Mulliken1955}, Mayer \cite{Mayer2007}, Jug \cite{Jug1977}, Politzer \cite{Politzer1969}, atomic overlap matrix
+bond order \cite{Cioslowski1991}, natural resonance theory bond order \cite{Glendening1998}, Nalewajksi-Mrozek bond order \cite{Nalewajski1994},
+effective bond order \cite{Roos2007}, natural localized molecular orbital bond order \cite{Reed1990}, delocalization index \cite{Bader1975}, and fuzzy bond order \cite{Mayer2004}. Here, we compare the Wiberg and Mayer bond orders.
 
-## Document organization
-
-Document section headings:
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-### A heading centered on its own printed page{.center .page_center}
-
-<!-- an arbitrary comment. visible in input, but not visible in output. -->
-
-Horizontal rule:
-
----
-
-`Heading 1`'s are recommended to be reserved for the title of the manuscript.
-
-`Heading 2`'s are recommended for broad sections such as *Abstract*, *Methods*, *Conclusion*, etc.
-
-`Heading 3`'s and `Heading 4`'s are recommended for sub-sections.
-
-## Links
-
-Bare URL link: <https://manubot.org>
-
-[Long link with lots of words and stuff and junk and bleep and blah and stuff and other stuff and more stuff yeah](https://manubot.org)
-
-[Link with text](https://manubot.org)
-
-[Link with hover text](https://manubot.org "Manubot Homepage")
-
-[Link by reference][manubot homepage]
-
-[Manubot Homepage]: https://manubot.org
-
-## Citations
-
-Citation by DOI [@doi:10.7554/eLife.32822].
-
-Citation by PubMed Central ID [@pmcid:PMC6103790].
-
-Citation by PubMed ID [@pmid:30718888].
-
-Citation by Wikidata ID [@wikidata:Q56458321].
-
-Citation by ISBN [@isbn:9780262517638].
-
-Citation by URL [@url:https://greenelab.github.io/meta-review/].
-
-Citation by tag [@tag:deep-review].
-
-Multiple citations can be put inside the same set of brackets [@doi:10.7554/eLife.32822; @tag:deep-review; @isbn:9780262517638].
-Manubot plugins provide easier, more convenient visualization of and navigation between citations [@doi:10.1371/journal.pcbi.1007128; @pmid:30718888; @pmcid:PMC6103790; @tag:deep-review].
-
-Citation tags (i.e. aliases) can be defined in their own paragraphs using Markdown's reference link syntax:
-
-[@tag:deep-review]: doi:10.1098/rsif.2017.0387
-
-## Referencing figures, tables, equations
-
-Figure @fig:square-image
-
-Figure @fig:wide-image
-
-Figure @fig:tall-image
-
-Figure @fig:vector-image
-
-Table @tbl:bowling-scores
-
-Equation @eq:regular-equation
-
-Equation @eq:long-equation
-
-## Quotes and code
-
-> Quoted text
-
-> Quoted block of text
->
-> Two roads diverged in a wood, and I—  
-> I took the one less traveled by,  
-> And that has made all the difference.
-
-Code `in the middle` of normal text, aka `inline code`.
-
-Code block with Python syntax highlighting:
-
-```python
-from manubot.cite.doi import expand_short_doi
-
-def test_expand_short_doi():
-    doi = expand_short_doi("10/c3bp")
-    # a string too long to fit within page:
-    assert doi == "10.25313/2524-2695-2018-3-vliyanie-enhansera-copia-i-insulyatora-gypsy-na-sintez-ernk-modifikatsii-hromatina-i-svyazyvanie-insulyatornyh-belkov-vtransfetsirovannyh-geneticheskih-konstruktsiyah"
-```
-
-Code block with no syntax highlighting:
-
-```
-Exporting HTML manuscript
-Exporting DOCX manuscript
-Exporting PDF manuscript
-```
-
-## Figures
-
-![
-**A square image at actual size and with a bottom caption.**
-Loaded from the latest version of image on GitHub.
-](https://github.com/manubot/resources/raw/15493970f8882fce22bef829619d3fb37a613ba5/test/square.png "Square image"){#fig:square-image}
-
-![
-**An image too wide to fit within page at full size.**
-Loaded from a specific (hashed) version of the image on GitHub.
-](https://github.com/manubot/resources/raw/15493970f8882fce22bef829619d3fb37a613ba5/test/wide.png "Wide image"){#fig:wide-image}
-
-![
-**A tall image with a specified height.**
-Loaded from a specific (hashed) version of the image on GitHub.
-](https://github.com/manubot/resources/raw/15493970f8882fce22bef829619d3fb37a613ba5/test/tall.png "Tall image"){#fig:tall-image height=3in}
-
-![
-**A vector `.svg` image loaded from GitHub.**
-The parameter `sanitize=true` is necessary to properly load SVGs hosted via GitHub URLs.
-White background specified to serve as a backdrop for transparent sections of the image.
-](https://raw.githubusercontent.com/manubot/resources/master/test/vector.svg?sanitize=true "Vector image"){#fig:vector-image height=2.5in .white}
-
-## Tables
-
-| *Bowling Scores* | Jane          | John          | Alice         | Bob           |
-|:-----------------|:-------------:|:-------------:|:-------------:|:-------------:|
-| Game 1 | 150 | 187 | 210 | 105 |
-| Game 2 |  98 | 202 | 197 | 102 |
-| Game 3 | 123 | 180 | 238 | 134 |
-
-Table: A table with a top caption and specified relative column widths.
-{#tbl:bowling-scores}
-
-|         | Digits 1-33                        | Digits 34-66                      | Digits 67-99                      | Ref.                                                        |
-|:--------|:-----------------------------------|:----------------------------------|:----------------------------------|:------------------------------------------------------------|
-| pi      | 3.14159265358979323846264338327950 | 288419716939937510582097494459230 | 781640628620899862803482534211706 | [`piday.org`](https://www.piday.org/million/)               |
-| e       | 2.71828182845904523536028747135266 | 249775724709369995957496696762772 | 407663035354759457138217852516642 | [`nasa.gov`](https://apod.nasa.gov/htmltest/gifcity/e.2mil) |
-
-Table: A table too wide to fit within page.
-{#tbl:constant-digits}
-
-|          | **Colors** <!-- $colspan="2" --> |                      |
-|:--------:|:--------------------------------:|:--------------------:|
-| **Size** | **Text Color**                   | **Background Color** |
-| big      | blue                             | orange               |
-| small    | black                            | white                |
-
-Table: A table with merged cells using the `attributes` plugin.
-{#tbl: merged-cells}
-
-## Equations
-
-A LaTeX equation:
-
-$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$ {#eq:regular-equation}
-
-An equation too long to fit within page:
-
-$$x = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s + t + u + v + w + x + y + z + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$$ {#eq:long-equation}
-
-## Special
-
-<i class="fas fa-exclamation-triangle"></i> [WARNING]{.semibold} _The following features are only supported and intended for `.html` and `.pdf` exports._
-_Journals are not likely to support them, and they may not display correctly when converted to other formats such as `.docx`._
-
-[Link styled as a button](https://manubot.org "Manubot Homepage"){.button}
-
-Adding arbitrary HTML attributes to an element using Pandoc's attribute syntax:
-
-::: {#some_id_1 .some_class style="background: #ad1457; color: white; margin-left: 40px;" title="a paragraph of text" data-color="white" disabled="true"}
-Manubot Manubot Manubot Manubot Manubot.
-Manubot Manubot Manubot Manubot.
-Manubot Manubot Manubot.
-Manubot Manubot.
-Manubot.
-:::
-
-Adding arbitrary HTML attributes to an element with the Manubot `attributes` plugin (more flexible than Pandoc's method in terms of which elements you can add attributes to):
-
-Manubot Manubot Manubot Manubot Manubot.
-Manubot Manubot Manubot Manubot.
-Manubot Manubot Manubot.
-Manubot Manubot.
-Manubot.
-<!-- $id="element_id" class="some_class" $style="color: #ad1457; margin-left: 40px;" $disabled="true" $title="a paragraph of text" $data-color="red" -->
-
-Available background colors for text, images, code, banners, etc:  
-
-`white`{.white}
-`lightgrey`{.lightgrey}
-`grey`{.grey}
-`darkgrey`{.darkgrey}
-`black`{.black}
-`lightred`{.lightred}
-`lightyellow`{.lightyellow}
-`lightgreen`{.lightgreen}
-`lightblue`{.lightblue}
-`lightpurple`{.lightpurple}
-`red`{.red}
-`orange`{.orange}
-`yellow`{.yellow}
-`green`{.green}
-`blue`{.blue}
-`purple`{.purple}
-
-Using the [Font Awesome](https://fontawesome.com/) icon set:
-
-<!-- include the Font Awesome library, per: https://fontawesome.com/start -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-
-<i class="fas fa-check"></i> <i class="fas fa-question"></i> <i class="fas fa-star"></i> <i class="fas fa-bell"></i> <i class="fas fa-times-circle"></i> <i class="fas fa-ellipsis-h"></i>
-
-[
-<i class="fas fa-scroll fa-lg"></i> **Light Grey Banner**<br>
-useful for *general information* - [manubot.org](https://manubot.org/)
-]{.banner .lightgrey}
-
-[
-<i class="fas fa-info-circle fa-lg"></i> **Blue Banner**<br>
-useful for *important information* - [manubot.org](https://manubot.org/)
-]{.banner .lightblue}
-
-[
-<i class="fas fa-ban fa-lg"></i> **Light Red Banner**<br>
-useful for *warnings* - [manubot.org](https://manubot.org/)
-]{.banner .lightred}
 
 
 ## References {.page_break_before}
 
 <!-- Explicitly insert bibliography here -->
 <div id="refs"></div>
+
+
+
+[@tag:deep-review]: doi:10.1098/rsif.2017.0387
