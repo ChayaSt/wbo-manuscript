@@ -11,7 +11,7 @@
   <meta name="author" content="Lee-Ping Wang" />
   <meta name="author" content="David L Mobley" />
   <meta name="author" content="John D Chodera" />
-  <meta name="dcterms.date" content="2020-04-08" />
+  <meta name="dcterms.date" content="2020-04-19" />
   <meta name="keywords" content="forcefield, force-field, cheminformatics" />
   <title>Capturing through-bond non-local effects in torsion parameters using fractional bond orders</title>
   <style>
@@ -34,8 +34,8 @@
   <meta name="citation_title" content="Capturing through-bond non-local effects in torsion parameters using fractional bond orders" />
   <meta property="og:title" content="Capturing through-bond non-local effects in torsion parameters using fractional bond orders" />
   <meta property="twitter:title" content="Capturing through-bond non-local effects in torsion parameters using fractional bond orders" />
-  <meta name="dc.date" content="2020-04-08" />
-  <meta name="citation_publication_date" content="2020-04-08" />
+  <meta name="dc.date" content="2020-04-19" />
+  <meta name="citation_publication_date" content="2020-04-19" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -77,9 +77,9 @@
   <meta name="citation_fulltext_html_url" content="https://ChayaSt.github.io/wbo-manuscript/" />
   <meta name="citation_pdf_url" content="https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/" />
-  <meta name="manubot_html_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/" />
-  <meta name="manubot_pdf_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://ChayaSt.github.io/wbo-manuscript/v/1919e28ed55f44de294533a60761be23399e2c85/" />
+  <meta name="manubot_html_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/1919e28ed55f44de294533a60761be23399e2c85/" />
+  <meta name="manubot_pdf_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/1919e28ed55f44de294533a60761be23399e2c85/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -100,10 +100,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://ChayaSt.github.io/wbo-manuscript/v/a7878107a2b0f16845c287e943a4ead9fd7beff1/">permalink</a>)
+(<a href="https://ChayaSt.github.io/wbo-manuscript/v/1919e28ed55f44de294533a60761be23399e2c85/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/ChayaSt/wbo-manuscript/tree/a7878107a2b0f16845c287e943a4ead9fd7beff1">ChayaSt/wbo-manuscript@a787810</a>
-on April 8, 2020.
+from <a href="https://github.com/ChayaSt/wbo-manuscript/tree/1919e28ed55f44de294533a60761be23399e2c85">ChayaSt/wbo-manuscript@1919e28</a>
+on April 19, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -196,54 +196,455 @@ However, given the larger chemical space small small molecule force fields need 
 In MM forcefields, the potential energy is constructed with terms for bond stretching, angle bending, internal rotations, electrostatics and Lennard-Jones for attractive and repulsive forces <span class="citation" data-cites="11Z8pXbEW 1GDaakPWY Mi3Ujd07">[<a href="#ref-11Z8pXbEW" role="doc-biblioref">6</a>,<a href="#ref-1GDaakPWY" role="doc-biblioref">7</a>,<a href="#ref-Mi3Ujd07" role="doc-biblioref">8</a>]</span>.
 These free parameters in these functionals are fit to reproduce experimental and quantum chemical (QC) data.</p>
 <h3 id="the-torsion-functional-describes-the-potential-energy-of-internal-rotation">1.1 The torsion functional describes the potential energy of internal rotation</h3>
-<p>The torsion functional which models internal rotation is particularly challenging to parameterize and the least transferable relative to other bonded terms for several reasons [CITE].
-First, torsion parameters are usually fit to computationally expensive QC torsion scans which introduces a bottle neck to setting up simulations.
-Second, torsion parameters are ‘soft’ or very flexible degrees of freedom compared to bond and angle parameters [CITE].
-Relatively small variations to the torsional potential surface can strongly influence molecular conformation distributions [CITE].
-Given how critical torsion parameters ar in determining conformation distributions in simulations, it is prudent for them to be accurately parameterized.
-Third, torsion potentials can be strongly influenced by distal substituents, an effect very difficult to represent in a force field that uses only local chemistry to define parameters.
-When parameterizing a molecular system, the force field assigns atom types, or a description of the atom’s atomic number and chemical environment to every atom in the system [CITE].
-These atom types are generally defined by their local chemical environment.
-A torsion type is defined by the atom types of the four atoms involved in the torsion.
-These non-local through-bond effects are difficult to capture with local torsion types and is a contributing factor to torsion parameters’ poor transferability.</p>
-<p>In most force fields (CHARMM [CITE], AMBER [CITE], OPLS [CITE]) the torsion potential is given by a truncated Fourier series:</p>
+<p>In most force fields (CHARMM <span class="citation" data-cites="11Z8pXbEW">[<a href="#ref-11Z8pXbEW" role="doc-biblioref">6</a>]</span>, AMBER <span class="citation" data-cites="1GDaakPWY">[<a href="#ref-1GDaakPWY" role="doc-biblioref">7</a>]</span>, OPLS <span class="citation" data-cites="Mi3Ujd07">[<a href="#ref-Mi3Ujd07" role="doc-biblioref">8</a>]</span>) the torsion potential is given by a truncated Fourier series:</p>
 <p><span id="eq:torsion" class="eqnos"><span class="math display">\[ E_{torions} = \sum_{torsions}\sum_{n=1}^N K_{\phi, n}(1 + cos(n\phi_i - \delta_n)) \]</span><span class="eqnos-number">(1)</span></span></p>
 <p>where the sum is over torsion angles <span class="math inline">\(\phi\)</span> and multiplicities <span class="math inline">\(n\)</span>.
 The force constants $K_{, n} determine the barrier heights, the multiplicities <span class="math inline">\(n\)</span> determine the number of minima and the phase angles $_{, n} determines the phase.
-In most force fields the <span class="math inline">\(N\)</span> can go up to 6 and the phase angles <span class="math inline">\(\delta\)</span> are usually set to <span class="math inline">\(0^{\circ}\)</span> or <span class="math inline">\(180^{\circ}\)</span> to symmetrize the curve around <span class="math inline">\(0^{\circ}\)</span>.</p>
-<p>The torsion energy about a bond is determined by a combination of local and non-local effects from conjugation, hypercojugation, sterics, and electrostatics [CITE].
-Steric and elecrostatic interactions are, in principle, accounted for by non bonded terms in most force fields, so a torsion profile would ideally primarily capture conjugation or hyperconjugation effects, and only the 1-4 electrostatics.
-However, conjugation and hyperconjugation are non local properties and remote chemical changes can influence the extent of conjugation and/or hyperconjugation.
-These effects are not always captured by existing, locally defined torsion types.</p>
-<p>Discuss how previous work dealt with this problem</p>
+In most force fields the <span class="math inline">\(N\)</span> can go up to 6 and the phase angles <span class="math inline">\(\delta\)</span> are usually set to <span class="math inline">\(0^{\circ}\)</span> or <span class="math inline">\(180^{\circ}\)</span> to symmetrize the curve around <span class="math inline">\(0^{\circ}\)</span> <span class="citation" data-cites="i8ZZOoVS">[<a href="#ref-i8ZZOoVS" role="doc-biblioref">9</a>]</span>.</p>
+<p>The torsion energy about a bond is determined by a combination of local and non-local effects from conjugation, hypercojugation, sterics, and electrostatics <span class="citation" data-cites="fpE0Y69s AWj8hnbG Vx7ALVw2 1DVkKVgPL">[<a href="#ref-fpE0Y69s" role="doc-biblioref">10</a>,<a href="#ref-AWj8hnbG" role="doc-biblioref">11</a>,<a href="#ref-Vx7ALVw2" role="doc-biblioref">12</a>,<a href="#ref-1DVkKVgPL" role="doc-biblioref">13</a>]</span>.
+Steric and elecrostatic interactions are, in principle, accounted for by non bonded terms in most force fields, so a torsion profile would ideally primarily capture conjugation or hyperconjugation effects, and only the 1-4 electrostatics.</p>
+<p>The torsion functional which models internal rotation is particularly challenging to parameterize and the least transferable relative to other bonded terms for several reasons <span class="citation" data-cites="13fQUQyf9 thaStBUv fpE0Y69s">[<a href="#ref-13fQUQyf9" role="doc-biblioref">14</a>,<a href="#ref-thaStBUv" role="doc-biblioref">15</a>,<a href="#ref-fpE0Y69s" role="doc-biblioref">10</a>]</span>.
+First, torsion parameters are usually fit to computationally expensive QC torsion scans which introduces a bottle neck to setting up simulations.
+Second, torsion parameters are ‘soft’ or very flexible degrees of freedom compared to bond and angle parameters.
+Relatively small variations to the torsional potential surface can strongly influence molecular conformation distributions <span class="citation" data-cites="thaStBUv">[<a href="#ref-thaStBUv" role="doc-biblioref">15</a>]</span>.
+Given how critical torsion parameters are in determining conformation distributions in simulations, it is prudent for them to be accurately parameterized.
+Third, torsion potentials can be strongly influenced by distal substituents due to changes in conjugation or hypercojugation, an effect very difficult to represent in a force field that uses only local chemistry to define parameters [CITE fragmenter paper].
+When parameterizing a molecular system, the force field assigns atom types, or a description of the atom’s atomic number and chemical environment to every atom in the system <span class="citation" data-cites="jcQ6P6uD VYvjE9wM">[<a href="#ref-jcQ6P6uD" role="doc-biblioref">16</a>,<a href="#ref-VYvjE9wM" role="doc-biblioref">17</a>]</span>.
+The reason atom types are used is to allow transferability of parameters to other atoms in similar chemical environments.
+A torsion type is defined by the quartet of atom types of the four atoms involved in the torsion <span class="citation" data-cites="Z8BM4e7W YmRgHfeU">[<a href="#ref-Z8BM4e7W" role="doc-biblioref">18</a>,<a href="#ref-YmRgHfeU" role="doc-biblioref">19</a>]</span>.
+However, these atom types are generally defined by their local chemical environment which leads to locally defined torsion types.
+Therefore, non-local through-bond effects such as conjugation and hypercojugation are difficult to capture.
+The inability of traditional torsion types to capture such effects and the torsion energy profile’s sensitivity distal chemical changes are contributing factors to torsion parameters’ poor transferability.</p>
+<p>To address this issue of poor parameter transferability, many practitioners have employed bespoke parameterization where parameters are fit to a specific molecule.
+Many automatic and semi-automatic tools exist to generate such bespoke paraemters such as GAMMP [cite], ffTK [cite], Paramfit [cite], and QUBEKit <span class="citation" data-cites="1F62Qo2RU">[<a href="#ref-1F62Qo2RU" role="doc-biblioref">20</a>]</span>.
+When only a few molecules need to be parameterized, these tools are very useful for aiding researchers in setting up molecular systems in a systematic and reproducible way.
+However, the paraemters generated from such tools are not meant to be generalizable and are not practical when many molecules need to be paraemterized.
+Another approach to overcome this lack of transferability is to add new atom types to adequately capture torsion profiles <span class="citation" data-cites="JJX4iDz2">[<a href="#ref-JJX4iDz2" role="doc-biblioref">21</a>]</span>.
+However, these new atom types are generally added in an unsystematic way and leads to a proliferation of other force field terms <span class="citation" data-cites="1HYTTY1PU">[<a href="#ref-1HYTTY1PU" role="doc-biblioref">22</a>]</span>.</p>
+<p>Atom type independent force fields seek to overcome both the proliferation of force field terms and transferability by moving away from using atom types.
+The SMIRNOFF force field <span class="citation" data-cites="1HYTTY1PU">[<a href="#ref-1HYTTY1PU" role="doc-biblioref">22</a>]</span> uses SMARTS patterns for direct chemical perception to replace atom types and avoid table look-ups.
+In the context of torsion types, the SMIRNOFF format allows one to create a new SMARTS pattern for a torsion type without the need to introduce new atom types.
+These SMARTS patterns can be created at different levels of granualarity for torsion types without worrying about proliferation of other force field terms.
+The Hyperconjugation for Torsional Energy Quantification (H-TEQ) [<span class="citation" data-cites="15wrEpSer"><a href="#ref-15wrEpSer" role="doc-biblioref">23</a></span>; <span class="citation" data-cites="16GNoHAFY"><a href="#ref-16GNoHAFY" role="doc-biblioref">24</a></span>; 10.1021/acs.jcim.9b00585] approach uses
+chemical principles of conjugation, hyperconjugation, and electronegativity of the atoms involved in the torsion to model torsion energies without the need to directly fit torsion parameters.
+In this study we combine these two approaches by using the Wiberg Bond Order (WBO), a measure of electron population overlap between atoms in a bond, and
+SMARTS torsion types to interpolate torsion force field parameters.</p>
 <h3 id="fractional-bond-orders-describe-the-extent-of-bonding-between-two-atoms">1.2 Fractional bond orders describe the extent of bonding between two atoms</h3>
-<p>An MM force field first assigns each atom in the system an atom type, or a description of the atom’s atomic number and chemical environment <span class="citation" data-cites="iWJXRU8T VYvjE9wM">[<a href="#ref-iWJXRU8T" role="doc-biblioref">9</a>,<a href="#ref-VYvjE9wM" role="doc-biblioref">10</a>]</span>.
-This reduces the number of parameters needed to describe the system because parameters developed for one atom can be transferred to other atoms in similar chemical environments.</p>
-<p>Bond-stretching and angle-bending terms are considered ‘hard’ degrees of freedom <span class="citation" data-cites="sHgXuXfO">[<a href="#ref-sHgXuXfO" role="doc-biblioref">11</a>]</span> which means their associated force constants are large and small deviations from <span class="math inline">\(b_0\)</span> and <span class="math inline">\(\theta_0\)</span> will result in large changes in the potential energy.
-Therefore, bond and angle terms are straight forward to parameterize.
-They have historically been fit to vibrational frequency, crystallographic and microwave data <span class="citation" data-cites="WxkLgSJW PggAEYqK">[<a href="#ref-WxkLgSJW" role="doc-biblioref">12</a>,<a href="#ref-PggAEYqK" role="doc-biblioref">13</a>]</span>.
-QC data have also been used to fit these terms <span class="citation" data-cites="PggAEYqK">[<a href="#ref-PggAEYqK" role="doc-biblioref">13</a>]</span>.
-Parameterizing the torsion dihedral-angle term is less trivial and are the least transferable relative to other bonded terms <span class="citation" data-cites="13fQUQyf9 thaStBUv">[<a href="#ref-13fQUQyf9" role="doc-biblioref">14</a>,<a href="#ref-thaStBUv" role="doc-biblioref">15</a>]</span>.
-The torsion angle is a ‘soft’ or very flexible degree of freedom and relatively small variations to the torsional potential energy surface can strongly influence molecular conformation distributions.
-Given how critical torsion parameters are in determining conformation distributions in simulations, it is prudent for them to be accurately parameterized.</p>
-<p>The torsion energy functional (equation ) used to describe the energy of internal rotation of molecules is given as a sum of cosines.
-In equation <a href="#eq:torsion">1</a>, the torsion angle <span class="math inline">\(\phi\)</span> is the angle between the two planes formed by the 1, 2, 3 and 2, 3, 4 atoms of four sequentially bonded atoms.
-<span class="math inline">\(K_{\phi, n}\)</span> is the torsion force constant which determines the energy barrier height, <span class="math inline">\(n\)</span> is the multiplicity which determines the number of minima and maxima in the curve, and <span class="math inline">\(\delta\)</span> is phase angle which determines the shift shift.
-The maximum value for <span class="math inline">\(n\)</span> ranges from 3 to 6, depending on the force field. These parameters are usually fit to computationally expensive QC torsion scans.</p>
-<p>The physical motivation for the torsion term is to include quantum orbital effects that contribute to resistance to rotations of conjugated and higher multiplicity bonds <span class="citation" data-cites="ktnbcfT3">[<a href="#ref-ktnbcfT3" role="doc-biblioref">16</a>]</span>.
-The multiplicity terms, <span class="math inline">\(n\)</span>, are chosen based on chemical intuition to reproduce the periodic nature of the torsion profile involved.
-In reality, the torsion energy about a central bond is determined by a combination of effects that are difficult to separate; 1-4 non-bonded interactions, through-space steric and electrostatic interactions of atoms beyond the 1-4 atoms in the torsion, and electronic delocalization such as conjugation and hypercojugation <span class="citation" data-cites="Vx7ALVw2 1DVkKVgPL AWj8hnbG fpE0Y69s">[<a href="#ref-Vx7ALVw2" role="doc-biblioref">17</a>,<a href="#ref-1DVkKVgPL" role="doc-biblioref">18</a>,<a href="#ref-AWj8hnbG" role="doc-biblioref">19</a>,<a href="#ref-fpE0Y69s" role="doc-biblioref">20</a>]</span>.</p>
-<h2 id="fractional-bond-orders">2.2 Fractional bond orders</h2>
-<p>In quantum mechanics, a molecule is a system of particles - nuclei and electrons. Chemists, however, think of molecules as atoms held together by bonds.
-The connectivity graph of molecules is a very important mental model in chemistry, based on centuries of chemical observations and knowledge.
-Many quantum chemists such as Pauling , Coulson , Mulliken , Wiberg , and Mayer  have worked on bridging the gap between the physical and chemical conception of atoms in molecules by an  analysis of the wave function to arrive at a fractional bond order that is consistent with the chemical concept of the multiplicity of a chemical bond.
-In this thesis (Chapters 2 and 3) I show how informative the Wiberg bond order, calculated from a cheap AM1 wave function, is for solving several outstanding problems in classical force field development.</p>
-<p>The WBO is just one form of quantum mechanical electron density based bond order calculations that
-aims to quantify the chemical bond, a key concept in chemistry, by computing the electron population
-overlap between atoms. Many other definitions have been proposed; a non-exhaustive list includes
-Pauling , Coulson , Mulliken , Mayer , Jug , Politzer , atomic overlap matrix
-bond order , natural resonance theory bond order , Nalewajksi-Mrozek bond order ,
-effective bond order , natural localized molecular orbital bond order , delocalization index , and fuzzy bond order . Here, we compare the Wiberg and Mayer bond orders.</p>
+<p>In quantum mechanics, a molecule is a system of individual particles without explicit bonds - nuclei and electrons.
+Chemists, however, think of molecules as atoms held together by bonds.
+The connectivity graph of molecules is a very important mental model in chemistry, based on centuries of chemical observations and knowledge that chemists employ when thinking about molecules.
+Many quantum chemists such as Pauling <span class="citation" data-cites="ZAAgsuwk">[<a href="#ref-ZAAgsuwk" role="doc-biblioref">25</a>]</span>, Coulson <span class="citation" data-cites="QY82Gb6W">[<a href="#ref-QY82Gb6W" role="doc-biblioref">26</a>]</span>, Mulliken <span class="citation" data-cites="9WKaagH4">[<a href="#ref-9WKaagH4" role="doc-biblioref">27</a>]</span>,
+Wiberg <span class="citation" data-cites="BES2Ksiq">[<a href="#ref-BES2Ksiq" role="doc-biblioref">28</a>]</span>, and Mayer <span class="citation" data-cites="8uYd8cxr">[<a href="#ref-8uYd8cxr" role="doc-biblioref">29</a>]</span>, Jug <span class="citation" data-cites="vfRrdWeG">[<a href="#ref-vfRrdWeG" role="doc-biblioref">30</a>]</span>, Politzer <span class="citation" data-cites="11ndqhfsy">[<a href="#ref-11ndqhfsy" role="doc-biblioref">31</a>]</span> have worked on bridging the gap between the physical and chemical conception of atoms in molecules by an  analysis of the wave function to arrive at a fractional bond order that is consistent with the chemical concept of the multiplicity of a chemical bond.
+Given that these quantities try to make that connection, it is not surprising that fractional bond orders captures important, chemical properties that can be useful in many applications, specifically force field parameterization.
+Indeed, In the MMP2 <span class="citation" data-cites="mgZozbxT">[<a href="#ref-mgZozbxT" role="doc-biblioref">32</a>]</span>, MM3 <span class="citation" data-cites="F7LEPYAx">[<a href="#ref-F7LEPYAx" role="doc-biblioref">33</a>]</span> and MM4 <span class="citation" data-cites="1F0ePTGWd">[<span class="citeproc-not-found" data-reference-id="1F0ePTGWd"><strong>???</strong></span>]</span> force fields, a Variable Electronegativity SCF derived bond order for pi-systems was used to fit bond length, bond force constants and twofold torsional force constants
+Here we use the Wiberg Bond Order (WBO), a relatively simple and cheap quantity that comes for free from an AM1BCC calculation used to generate partial charges to interpolate torsion force constants.
+First we show that WBOs are a good indicator of the electron density around the central bond and is linearly related to torsion barrier heights.
+Then we show that it is possible to use this relationship to interpolate torsion force constants for the same torsion type in different chemical environments.
+Lastly, we use a data-driven approach to generate SMARTS patterns for the needed torsion types and demonstrate this approach on a set of substituted phenyl rings.</p>
+<h2 id="results-and-discussion">2. Results and Discussion</h2>
+<h3 id="torsion-energy-barriers-are-sensitive-to-the-chemical-environment-which-can-be-influenced-by-remote-substituents">2.1 Torsion energy barriers are sensitive to the chemical environment which can be influenced by remote substituents</h3>
+<p>In most force fields, torsions are defined by the quartet of atoms types involved in the dihedral <span class="citation" data-cites="waPeRcgV 1GDaakPWY 11Z8pXbEW Mi3Ujd07">[<a href="#ref-11Z8pXbEW" role="doc-biblioref">6</a>,<a href="#ref-1GDaakPWY" role="doc-biblioref">7</a>,<a href="#ref-Mi3Ujd07" role="doc-biblioref">8</a>,<a href="#ref-waPeRcgV" role="doc-biblioref">34</a>]</span>.
+Atom types encode chemical environments of atoms that usually only incorporate the local environment.
+However, the quartet of atom types do not always capture all relevant chemistry, especially when the effects are nonlocal; atoms contributing to hyperconjugation, delocalization, or other nonclassical effects may not be part of the quartet involved in the torsion yet can influence the torsion profile <span class="citation" data-cites="13fQUQyf9">[<a href="#ref-13fQUQyf9" role="doc-biblioref">14</a>]</span>.
+In particular, with conjugated systems, distal electron-donating or -withdrawing substituents can exert a strong effect on torsional barrier height.</p>
+<p>Simple examples can help illustrate this, such as the biphenyl example in different protonation states shown in Figure <a href="#fig:biphenyls">1</a>, A.
+While the MM torsion profiles are all the same (Figure <a href="#fig:biphenyls">1</a> D), the QC torsion profiles are different for each protonation state (Figure <a href="#fig:biphenyls">1</a> C).
+The torsion energy barrier increases relative to the neutral state for the cation, anion, and zwitterion, in that order.
+The profile changes qualitatively as well.
+For the neutral molecule, the lowest energy conformer is slightly out of plane, at <span class="math inline">\(150^{\circ}\)</span> and <span class="math inline">\(120^{\circ}\)</span>.
+For the others, the lowest energy conformer is at <span class="math inline">\(180^{\circ}\)</span>.
+In the neutral molecule, the slightly out-of-plane conformer is preferred to accommodate the proximal hydrogens.
+In the other cases, the increasing double-bond character of the conjugated central bond (shown for the zwitterion in Figure <a href="#fig:biphenyls">1</a> B) makes the planar conformer preferred.</p>
+<p>This trend poses problems to generalized torsion force field parametrization.
+Most general force fields consider the central bond in all tautomers equally rotatable so their MM torsion profiles are all the same (Figure <a href="#fig:biphenyls">1</a>, D), while the QC scan clearly shows that they are not.
+This illustrates one of the fundamental limits of atom types in classical force fields:
+At what point in this series should a new atom type be introduced?
+In this case, remote changes three bonds away from the torsion central bond gradually perturbed the conjugated bond from being highly rotatable to non-rotatable as the conjugation increased.</p>
+<div id="fig:biphenyls" class="fignos">
+<figure>
+<img src="images/figure_3_2.svg" alt="" /><figcaption><span>Figure 1:</span> <strong>Torsion profiles can be sensitive to remote substituents changes in a molecule.</strong>
+<strong>[A]</strong> Biphenyl protonation states and tautomers with increasing Wiberg bond order for the central bond.
+<strong>[B]</strong> The resonance structure of the biphenyl zwitterion shows how the central bond is highly conjugated. The Wiberg bond order
+and torsion scan for this bond (see <strong>A</strong> and <strong>C</strong>) are reflective of a conjugated bond.
+<strong>[C]</strong> Relative QC energy as a function of torsion angle of the central bond computed via QCArchive at B3LYP-D3(BJ) / DZVP level of theory.
+The colors of the QC scan corresponds to the highlighted bonds in <strong>A</strong>.
+<strong>[D]</strong> Same as <strong>C</strong>, but using MM energy computed via the openff-1.0.0 force field.
+<strong>[E]</strong> Torsion barrier heights vs WBOs.
+The color of the data points correspond to the highlighted bonds in <strong>A</strong>.
+The QC torsion barrier height scales approximately linearly with the WBO.</figcaption>
+</figure>
+</div>
+<h3 id="the-wiberg-bond-order-wbo-quantifies-the-electronic-population-overlap-between-two-atoms-and-captures-bond-conjugation">2.2 The Wiberg bond order (WBO) quantifies the electronic population overlap between two atoms and captures bond conjugation</h3>
+<p>The Wiberg bond order (WBO) is a bond property that is calculated using atomic orbitals (AOs) that are used as basis sets in quantum and semi-empirical methods <span class="citation" data-cites="QlopodHU">[<a href="#ref-QlopodHU" role="doc-biblioref">35</a>]</span>.
+WBOs originally started within the CNDO formalism <span class="citation" data-cites="BES2Ksiq">[<a href="#ref-BES2Ksiq" role="doc-biblioref">28</a>]</span>, but has been extended to other semi-empirical methods such as AM1 <span class="citation" data-cites="tnSqySMX">[<a href="#ref-tnSqySMX" role="doc-biblioref">36</a>]</span> and PM3 <span class="citation" data-cites="dgUvu4tX">[<a href="#ref-dgUvu4tX" role="doc-biblioref">37</a>]</span>.
+The WBO is a measure of electron density between two atoms in a bond and is given by the quadratic sum of the density matrix elements over occupied atomic orbitals<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> on atoms A and B:</p>
+<p><span class="math display">\[\begin{equation} W_{AB} = \sum_{\mu\in A}\sum_{\nu\in B} P^2_{\mu\nu} \end{equation}\]</span></p>
+<h3 id="the-wbo-is-an-inexpensive-surrogate-for-monitoring-changes-in-the-chemical-environment-around-a-bond">2.3 The WBO is an inexpensive surrogate for monitoring changes in the chemical environment around a bond</h3>
+<p>Since the WBO can be calculated from an inexpensive AM1 calculation, is indicative of a bond’s conjugation, and is correlated with torsion energy barrier height, it is attractive to use for interpolating torsion force constants.
+However, WBOs are conformation-dependent <span class="citation" data-cites="r3xLNmRT hIon1SaZ">[<a href="#ref-r3xLNmRT" role="doc-biblioref">41</a>,<a href="#ref-hIon1SaZ" role="doc-biblioref">42</a>]</span>, so we further investigated this dependence to understand if WBOs will be a robust descriptor.
+In addition, we also investigated the generality of the torsion energy barrier and WBO linear relationship.
+In this section, we will first discuss our findings and solution to the conformation dependency and then discuss the generality of the WBO linear relationship with torsion barrier height.</p>
+<h4 id="conformation-dependent-variance-of-wbos-are-higher-for-conjugated-bonds">2.3.1 Conformation-dependent variance of WBOs are higher for conjugated bonds</h4>
+<p>Because they are a function of the electron density, WBOs are necessarily conformation-dependent.
+However, not all bond WBOs change the same way with conformation.
+We found that WBOs for conjugated bonds have higher variance with respect to conformation and that bonds involved in conjugated systems have WBOs that are correlated with each other.
+This makes sense in terms of our qualitative understanding of conjugation strength depending on the alignment of <span class="math inline">\(\pi\)</span> orbitals across the conjugated system: as the change of a distal torsion disrupts the <span class="math inline">\(\pi\)</span> orbital alignment, the strength of that conjugation on the local torsion barrier decreases.</p>
+<div id="fig:wbo_var_corr" class="fignos">
+<figure>
+<img src="images/figure-4.svg" alt="" /><figcaption><span>Figure 2:</span> <strong>Variance and correlations of Wiberg bond order distributions with respect to conformations are higher for conjugated bonds.</strong>
+<strong>[A]</strong> Gefitinib, with its rotatable bonds highlighted and numbered to correspond with figures B and C.
+<strong>[B]</strong> WBO distributions over 232 conformations of the highlighted, rotatable bonds.
+The colors of the distributions correspond to
+the colors in the highlighted bonds in A.
+The variance and their 95% confidence interval are shown on the left (with exponent base of 1E-5).
+The single non conjugated bonds (blue, (10, 11), red (11, 12), and olive (12, 13)) have lower variance than conjugated bonds (yellow (3, 2), purple (8, 9), orange (9, 10), grey (23, 19), and green(24, 24)).
+<strong>[C]</strong> Correlation plot of WBOs every bond in Gefitinib against WBOs of all other bonds over 232 conformations.
+The white lines indicate ring systems.
+Bonds in conjugated systems have higher correlations between their WBOs (see the aromatic ring systems in the two lower right diagonal squares).
+Both bonds (23, 19) (grey) and (24, 23) (green) have WBOs that are correlated with their neighboring ring systems, but bond (23, 19) are more correlated with the ring systems than the green bond (24, 23).
+<strong>[D]</strong> Resonance structures of Gefitinib illustrate why the grey bond (23, 19) has higher variance than the green bond (24, 23) even if
+both bonds are conjugated.
+When the double bond is on bond (23, 19), the negative charge is on a nitrogen which is the more stable form, vs the resonance structure where the double bond is on (24, 23) with the negative charge on a carbon.
+<strong>[E]</strong> The conformations of the molecule for the highest WBO and lowest in the distribution.
+The mode with higher WBOs has bond (23, 19) in plane with quinazoline which allows for stronger conjugation while the mode with lower WBOs has the bond out of plane so there is less electron population overlap in out of plane conformation.</figcaption>
+</figure>
+</div>
+<p>To investigate how WBOs change with conformation, we used Omega <span class="citation" data-cites="1G1ccz54w">[<a href="#ref-1G1ccz54w" role="doc-biblioref">43</a>]</span> to generate conformers for a set of kinase inhibitors (SI Figure ??) and calculated the WBO for each conformation from a B3LYP-D3(BJ) / DZVP <span class="citation" data-cites="17YEERBX3 flKRoCNc YPDz9hB3 CqesmIsy">[<a href="#ref-17YEERBX3" role="doc-biblioref">44</a>,<a href="#ref-flKRoCNc" role="doc-biblioref">45</a>,<a href="#ref-YPDz9hB3" role="doc-biblioref">46</a>,<a href="#ref-CqesmIsy" role="doc-biblioref">47</a>]</span> geometry optimized calculation using Psi4 <span class="citation" data-cites="YC6qkEYS">[<a href="#ref-YC6qkEYS" role="doc-biblioref">38</a>]</span>.
+Omega is a knowledge-based conformer generator that uses a modified version of MMFF94s <span class="citation" data-cites="11e7CbOCj">[<span class="citeproc-not-found" data-reference-id="11e7CbOCj"><strong>???</strong></span>]</span> to score conformations.
+It has been shown to accurately reproduce experimentally observed crystallography conformers in the Platinum benchmark dataset <span class="citation" data-cites="2hGWnSJL">[<a href="#ref-2hGWnSJL" role="doc-biblioref">48</a>]</span>.</p>
+<p>Figure <a href="#fig:wbo_var_corr">2</a> illustrates the results for Gefitinib (Figure <a href="#fig:wbo_var_corr">2</a>, A), a representative molecule.
+Figure <a href="#fig:wbo_var_corr">2</a>, B shows the distribution of WBOs for all rotatable bonds color-coded with the colors used to highlight the bonds in Gefitinib (Figure <a href="#fig:wbo_var_corr">2</a>, A).
+Single carbon-carbon bonds and carbon-nitrogen bonds formed by atoms numbered 10-13 are freely rotating.
+This is reflected by the tighter distribution (lower variance) of WBOs around closer to one for those bonds.</p>
+<p>The bonds involving the ether oxygens and aromatic rings (formed by atoms numbered 1-3, 8-10, 19, 23-24) exhibit higher variance.
+It is interesting to note the difference in the WBOs for the conjugated bonds formed by the nitrogen between the quinazoline and chloro fluoro phenyl (bonds formed by atoms numbered 19, 23 and 23, 24).
+Both of these bonds are conjugated with their neighboring ring systems.
+However, while the distribution of WBOs for bond 23-19 (the grey distribution) has two clear modes of almost equal weights, the WBO distribution for bond 24-23 has lower variance.
+This is in agreement with the resonance structures shown in Figure <a href="#fig:wbo_var_corr">2</a>.</p>
+<p>The resonance structures that have the double bond on the bond closer to the quinazoline (bond 19-23) are more stable because the negative charge is on a nitrogen.
+When the double bond is on the neighboring 23-24 bond, the negative charge is on an aromatic carbon which is less stable.
+The results are similar for other kinase inhibitors tested shown in SI Figure ??.</p>
+<p>In addition, when we inspected the conformations associated with the highest and lowest WBO in the grey distribution (Figure <a href="#fig:wbo_var_corr">2</a>, E) we found that conformations with lowest WBO on bond 19-23 had that bond out of plane while the conformation with the highest WBO value had the bond in plane which allows conjugation.
+We found similar results from WBOs calculated form QC torsion scans.
+Figure <a href="#fig:sub_phenyl_qc_scan">5</a> shows the WBO for each point in the QC corresponding torsion scans.
+The WBOs are anti-correlated with the torsion potential energy which is in line with chemical intuition.
+Conjugation stabilizes conformations and leads to more electronic population overlap in bonds <span class="citation" data-cites="14qKIxxbD">[<a href="#ref-14qKIxxbD" role="doc-biblioref">49</a>]</span>.
+At higher energy conformers, the aromatic rings are out of plane and cannot conjugate.
+Therefore the WBO is lower for those conformers.
+At lower energy conformations, the rings are in plane and can conjugate so the WBO is higher.
+We found that the trends discusses above are similar when using semi-empirical methods such as AM1 (SI Figure ??).
+For other levels of QC theory and for the Mayer bond order, the results can be different as discussed in the SI.</p>
+<h4 id="bonds-in-conjugated-systems-have-highly-correlated-conformation-dependent-wbos">2.3.2 Bonds in conjugated systems have highly correlated conformation-dependent WBOs</h4>
+<p>We found that certain bond orders are strongly correlated or anti-correlated with each other, indicating strong electronic coupling.
+As bonds in one conformation gain electron population overlap, the coupled bonds will decrease in electron population overlap and vice versa.
+Figure <a href="#fig:wbo_var_corr">2</a>, C shows the Pearson correlation coefficient for each bond WBO distribution against all other bond WBO distributions.
+There is a clear structure in this correlation plot. The square formed by bonds from atoms 24-29 shows that the alternating bonds in the aromatic ring (25-29) are strongly anti-correlated with each other.</p>
+<p>This trend is different in the ring formed by atoms 13-18, which is not aromatic.
+In this ring, bonds 13-18, 13-14, 16-15 and 16-17 (which involve electron rich atoms O and N) have Pearson correlation coefficients with absolute values higher than for the other bonds in the ring, but lower than the bonds in the aromatic ring.
+The bonds involved in the methoxy groups (atoms 1-3 and 8-10) are correlated with each other and also correlated to the quinazoline, albeit not as strongly.
+The bonds between the chloro fluoro phenyl and quinazoline follow the same trend as their WBO distribution and resonance structures.
+The bond closer to the quinazoline (bond 23-19) has WBO distribution correlated with the quinazoline while the bond closer to the
+chloro fluoro phenyl (bond 23-24) is not as strongly coupled with the quinazoline.</p>
+<p>The trends are similar for other kinase inhibitors examined, as shown in SI Figure ??.</p>
+<h4 id="electronically-least-interacting-functional-group-elf-method-provides-a-useful-way-to-capture-informative-conformation-independent-wbos">2.3.3 Electronically least-interacting functional group (ELF) method provides a useful way to capture informative conformation-independent WBOs</h4>
+<p><code class="yellow">[Note: Change these distributions to be over subsituted phenyl set?]</code>.
+<img src="images/standard_deviations.svg" id="fig:standard_deviations" alt="Standard deviations of conformation-dependent WBO distributions are smaller than standard deviations of WBO distribution of the same bond in different chemical environments. The distribution of standard deviations of WBO distributions over conformations is shown in blue. The distribution of standard deviations of ELF10 WBO distributions for the same bond in different chemical environments is shown in pink. The changes in WBO due to conformations are smaller than the changes in WBO due to chemical changes around the bond. The validation set (SI Figure ??), was used to generate these distributions. The blue standard deviation distribution was calculated over 140602 WBO dependent distributions (this is the number of individual fragments in the dataset). The pink standard deviation distribution was calculated over 366 distributions of 366 bonds in different chemical environments (of the 140602 fragments)" /></p>
+<p>As we have shown, the WBO is conformation-dependent and this dependency can also be highly informative of the electronic couplings within a system.
+Figure ?? shows the distribution of standard deviations of the conformation-dependent WBO distribution in blue.
+Most of the standard deviations fall below 0.03, which is encouragingly small.
+However, it can become computationally expensive to calculate the WBO for all conformations; if we aim to use WBOs as a descriptor for torsion barrier heights in a reproducible way, we need a way to capture informative conformation-independent WBOs.
+The Electronically Least-interacting Functional groups (ELF) conformation selection scheme implemented in the OpenEye Toolkit <code>quacpac</code> module <span class="citation" data-cites="16hZpgNca">[<a href="#ref-16hZpgNca" role="doc-biblioref">50</a>]</span> resolves the issue of sensitivity of molecular mechanics electrostatic energies from QC derived charges.</p>
+<p>The ELF10 method begins with a large set of conformers for the molecule.
+MMFF94 charges <span class="citation" data-cites="11e7CbOCj">[<span class="citeproc-not-found" data-reference-id="11e7CbOCj"><strong>???</strong></span>]</span> are assigned to the molecule, set to their absolute value, and then single-point Coulomb electrostatic energies evaluated for each conformer.
+The lowest-energy 2% of conformers are selected, and if there are more than 10, from these the most diverse 10 are selected.
+For this final conformer set (up to 10 conformers), the AM1 WBOs and charges for each conformer are averaged (by bond and by atom, respectively) and the BCCs are applied to the charges <span class="citation" data-cites="LxrgIkt0">[<a href="#ref-LxrgIkt0" role="doc-biblioref">51</a>]</span>.
+This method yields a set of AM1-BCC atomic partial charges and WBOs for the molecule which are relatively insensitive to the initial choice of conformer set, and which mitigate two pathologies of AM1-BCC charges: peculiar charges resulting from strong intramolecular electrostatic interactions (e.g. from internal hydrogen bonds or formal charges) and simple conformational variance.</p>
+<div id="fig:wbo_dists" class="fignos">
+<figure>
+<img src="images/figure-2_4.svg" alt="" /><figcaption><span>Figure 3:</span> <strong>Distribution of WBO in drug-like molecules is concentrated near chemically sensible values.</strong>
+<strong>[A]</strong> The distribution of all WBOs for all bonds in molecules in set. The mode at one, close to two and close to three correspond to
+single, double and triple bonds. the density between one and two correspond to aromatic and conjugated bonds. The mode at ~0.7 correspond
+to bonds that include sulfur and phosphorous which are longer, weaker bonds. <strong>[B]</strong> The blue distribution includes carbon - carbon bonds that
+are not in rings. The modes at one, two and three correspond to single, double and triple bonds. The pink distribution include bonds that are in rings.
+The mode at one corresponds to single bonds and the density between one and 1.5 are aromatics. <strong>[C]</strong> The blue distribution includes bonds that have
+either one or two nitrogens. Many of these bonds are conjugated as demonstrated by the density around 1.5. The density at three corresponds to
+nitriles. The pink distribution include bonds that have oxygens. The mode at two corresponds to carbonyls.</figcaption>
+</figure>
+</div>
+<p>This method can also be applied to produce WBOs that are insensitive to conformers.
+To check how well AM1 ELF10 estimated WBOs recapitulates the multiplicity of bonds, we calculated WBOs from AM1 ELF10 calculations for all bonds in a set of molecules shown in SI Figure ??.
+The distribution in Figure <a href="#fig:wbo_dists">3</a> corresponds closely with bond multiplicity.
+The density at ~0.7 correspond to bonds involving sulfur and phosphorous since these are weaker and longer bonds.
+The mode at ~1.0 corresponds to C-H and C-C bonds, the mode close to 1.5 corresponds to bonds in aromatic rings, the mode close to 2.0 corresponds to double bonds, and finally the triple bonds form the last peak.</p>
+<p>Figures <a href="#fig:wbo_dists">3</a> B and D separate out different kinds of bonds to more clearly illustrate what the WBO captures.
+Figure <a href="#fig:wbo_dists">3</a> B shows carbon - carbon bonds not in rings (blue) and bonds in rings (pink).
+The carbon-carbon distribution has distinct modes at one, two and three corresponding to single, double and triple bonds. There is also a smaller mode at 1.5 that corresponds to conjugated bonds.
+The pink distribution includes bonds in rings and has modes at one and 1.5 which corresponds to aliphatic and aromatic rings, respectively.
+Figure <a href="#fig:wbo_dists">3</a> D shows distributions with bonds that have nitrogens (blue) and oxygens (pink).
+The peaks occur at chemically sensible values; 1, 1.5 and 3 for nitrogen which corresponds to single, conjugated and triple bonds and 1 and 2 for oxygens which correspond to single and carbonyl bonds.
+For the rest of this section, we focus on the robustness and generalizability of ELF10 WBOs.</p>
+<h4 id="wbos-are-a-robust-signal-of-how-torsion-barrier-heights-depend-on-remote-chemical-changes">2.3.4 WBOs are a robust signal of how torsion barrier heights depend on remote chemical changes</h4>
+<p>To investigate how resonance and electronic effects from remote substituents change the torsion energy of a bond, we took inspiration from the Hammett equation <span class="citation" data-cites="3z27USyZ">[<a href="#ref-3z27USyZ" role="doc-biblioref">52</a>]</span> of reactions involving benzoic acid derivatives.
+The Hammett equation relates meta and para benzoic acid substituents to the acid’s ionization equilibrium constants</p>
+<p><span class="math display">\[\begin{equation} log \frac{K}{K_0} = \sigma\rho \end{equation}\]</span></p>
+<p>Here, <span class="math inline">\(\sigma\)</span> is a substituent constant and <span class="math inline">\(\rho\)</span> is a reaction constant.
+It aims to isolate the resonance and inductive effects
+of substituents from the sterics effects of a reaction. Here, we generated a combinatorial set of meta- and para-substituted phenyls
+and pyridine (Figure <a href="#fig:substituted_phenyls">4</a>, A) with 26 functional groups that cover a wide range of electron donating and withdrawing groups.
+We then calculated the AM1 ELF10 WBO for the bond attaching the functional group to the aromatic ring (highlighted green in
+Figure <a href="#fig:substituted_phenyls">4</a>, A) for all functional groups which resulted in 133 (26 * 5 + 3) WBOs for each functional group in different chemical environments.
+This allowed us to isolate the effect on a bond’s WBO from remote chemical environment changes, defined as a change more than two bonds away, from other effects such as sterics and conformations.
+The resulting distributions are in Figure <a href="#fig:substituted_phenyls">4</a>, B.
+(Details on generating and accessing this set are provided in Section <code class="red">[hold]</code> in the Detailed Methods.)</p>
+<p>It is interesting to note that the trend of decreasing WBOs for more electron donating groups are anticorrelates with increasing Hammett substituent constants.
+In SI Figure ??, the AM1 ELF10 WBOs of the bonds between the functional group and benzoic acid are plotted against their Hammett meta and para substituent constants (values were taken from Hansch et al. <span class="citation" data-cites="1EJC88xIC">[<a href="#ref-1EJC88xIC" role="doc-biblioref">53</a>]</span>).
+Functional groups that are more electron donating will have more electron density on the bond attaching the functional group to the benzoic acid.
+The resonance and/or inductive effect destabilize the benzoate, increases its pKa, which corresponds to lower substituent constants.</p>
+<div id="fig:substituted_phenyls" class="fignos">
+<figure>
+<img src="images/substituted_phenyls.svg" alt="" /><figcaption><span>Figure 4:</span> <strong>AM1 ELF10 Wiberg bond orders correlate with torsion barrier heights in related molecules.</strong>
+<strong>[A]</strong> Systems and functional groups used in the substituted phenyl set. The functional groups were chosen to span a large range of electron donating and withdrawing groups.
+<strong>[B]</strong> AM1 ELF10 WBO distributions for the bond between the phenyl ring and X<sub>1</sub> in different chemical environments.
+<strong>[C]</strong> Selected QC torsion scan barrier heights vs AM1 ELF10 WBOs. These lines all had r<sup>2</sup> greater than 0.7.
+<strong>[D]</strong> Same as <strong>C</strong> but these series did not fit the lines as well (r<sup>2</sup> less than 0.7).</figcaption>
+</figure>
+</div>
+<div id="tbl:stats" class="tablenos">
+<table>
+<caption><span>Table 1:</span> <strong>Slope and associated statistics for torsion barrier height vs WBO for selected functional groups.</strong> </caption>
+<thead>
+<tr class="header">
+<th>X<sub>1</sub></th>
+<th>slope</th>
+<th>standard error</th>
+<th>r<sup>2</sup> and 95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N(Me)<sub>2</sub></td>
+<td>116.92</td>
+<td>14.35</td>
+<td><span class="math inline">\(\textsf{0.88}_{\textsf{0.73}}^{\textsf{0.98}}\)</span></td>
+</tr>
+<tr class="even">
+<td>NHMe</td>
+<td>134.52</td>
+<td>16.19</td>
+<td><span class="math inline">\(\textsf{0.90}_{\textsf{0.83}}^{\textsf{0.98}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>NH<sub>2</sub></td>
+<td>64.27</td>
+<td>20.76</td>
+<td><span class="math inline">\(\textsf{0.58}_{\textsf{0.06}}^{\textsf{0.95}}\)</span></td>
+</tr>
+<tr class="even">
+<td>NHEt</td>
+<td>119.51</td>
+<td>19.98</td>
+<td><span class="math inline">\(\textsf{0.84}_{\textsf{0.61}}^{\textsf{0.98}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>NH(C<sub>3</sub>H<sub>7</sub>)</td>
+<td>163.76</td>
+<td>23.81</td>
+<td><span class="math inline">\(\textsf{0.87}_{\textsf{0.73}}^{\textsf{0.99}}\)</span></td>
+</tr>
+<tr class="even">
+<td>OH</td>
+<td>154.82</td>
+<td>35.67</td>
+<td><span class="math inline">\(\textsf{0.73}_{\textsf{0.26}}^{\textsf{0.98}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>OMe</td>
+<td>185.31</td>
+<td>41.33</td>
+<td><span class="math inline">\(\textsf{0.80}_{\textsf{0.46}}^{\textsf{0.99}}\)</span></td>
+</tr>
+<tr class="even">
+<td>OEt</td>
+<td>119.66</td>
+<td>47.12</td>
+<td><span class="math inline">\(\textsf{0.48}_{\textsf{0.07}}^{\textsf{0.88}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>NHCON(Me)<sub>2</sub></td>
+<td>159.31</td>
+<td>47.98</td>
+<td><span class="math inline">\(\textsf{0.58}_{\textsf{0.23}}^{\textsf{0.95}}\)</span></td>
+</tr>
+<tr class="even">
+<td>NHCONHMe</td>
+<td>127.65</td>
+<td>55.03</td>
+<td><span class="math inline">\(\textsf{0.43}_{\textsf{0.04}}^{\textsf{0.95}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>NHCONH<sub>2</sub></td>
+<td>238.12</td>
+<td>54.12</td>
+<td><span class="math inline">\(\textsf{0.73}_{\textsf{0.41}}^{\textsf{0.98}}\)</span></td>
+</tr>
+<tr class="even">
+<td>NHCOEt</td>
+<td>205.80</td>
+<td>51.80</td>
+<td><span class="math inline">\(\textsf{0.69}_{\textsf{0.31}}^{\textsf{0.99}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>NHCOMe</td>
+<td>144.32</td>
+<td>64.12</td>
+<td><span class="math inline">\(\textsf{0.46}_{\textsf{0.02}}^{\textsf{0.99}}\)</span></td>
+</tr>
+<tr class="even">
+<td>OCONH<sub>2</sub></td>
+<td>172.72</td>
+<td>84.85</td>
+<td><span class="math inline">\(\textsf{0.51}_{\textsf{0.03}}^{\textsf{0.98}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>COOH</td>
+<td>267.23</td>
+<td>91.46</td>
+<td><span class="math inline">\(\textsf{0.74}_{\textsf{0.04}}^{\textsf{1.0}}\)</span></td>
+</tr>
+<tr class="even">
+<td>COOEt</td>
+<td>149.01</td>
+<td>63.23</td>
+<td><span class="math inline">\(\textsf{0.58}_{\textsf{0.13}}^{\textsf{1.0}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>NO<sub>2</sub></td>
+<td>302.07</td>
+<td>47.74</td>
+<td><span class="math inline">\(\textsf{0.91}_{\textsf{0.79}}^{\textsf{1.0}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To investigate how these long range effects observed in the WBOs capture changes in the bonds’ torsion potential energy, we ran representative QC torsion scans for 17 of these functional groups (SI Figures ??, ??, ??, ?? ??).
+We did not run QC torsion scans for the following functional groups:
+* functional groups did not have a torsion such as halogens
+* functional groups that were congested (such as trimethyl amonium)
+* functional groups where the WBOs did not change by more than 0.01 for different functional groups at the meta or para position such as methyl.
+We chose the representative molecules for the 17 functional groups by sorting the molecules within each functional group by their WBO and selecting molecules with minimum WBO difference of 0.02.
+All of the resulting QC torsion scans are shown in SI Figures ??, ??, ??, ??, ??.
+Table <a href="#tbl:stats">1</a> lists the slopes and associated statistics for the fitted lines.</p>
+<p>When we compare the standard deviations of WBO distributions with respect to conformation versus with respect to changes in chemical space (Figure ??, pink distribution), we find that the changes in ELF10 WBO for remote chemical environment changes are usually bigger than the changes in WBO that arise from change in conformation.
+This allows us to use ELF10 WBOs as a good surrogate to changes the chemical environment that is reflected in QC torsion scans.</p>
+<h4 id="conformation-dependent-wbos-differentiate-between-though-space-and-through-bond-non-local-effects-on-qc-torsion-scans">2.3.5 Conformation-dependent WBOs differentiate between though-space and through-bond non-local effects on QC torsion scans</h4>
+<p>We show representative series of torsion scans in Figure <a href="#fig:sub_phenyl_qc_scan">5</a> and the corresponding conformation-dependant WBO at each conformation in the scan.
+A QC torsion scan contains contributions of through-bond effects such as conjugation and / or hyperconjugation and through-space effects such as sterics and electrostatics interactions [<span class="citation" data-cites="fpE0Y69s"><a href="#ref-fpE0Y69s" role="doc-biblioref">10</a></span>; 10.1021/jp046290d].
+In this section we show how WBOs can be used to characterize through-space and through-space effects in QC torsion scans.</p>
+<p>As a molecule is rotated about its bond to generate a QC torsion scan, changes in conjugation and / or hyperconjugation, the conformation of the rest of the molecule, and non-local, through-space interactions contribute to the potential energy surface that is then used to fit MM torsion parameters.
+The torsion parameters in classical force fields are supposed to include both conjugation, a through-bond electron delocalization phenomenon that is not well modeled in classical forcefields, and corrections for 1-4 non-bonded interactions.
+To increase their transferability, torsion parameters should not include non-bonded interactions beyond the 1-4 atoms.
+However, in general, it is difficult to separate the contributions of sterics and conjugation in a QC torsion scan.
+In this section we characterize steric and conjugation and / or hyperconjugation contributions to QC scans using the corresponding WBO scans.
+Below is a summary of these observations from the subsituted phenyl torsion scans.</p>
+<ol type="1">
+<li>When QC torsion scans are anti-correlated with conformation-dependent WBOs calculated for conformations in the scan, differences in QC torsion scans for the same torsion types in different chemical environments are a result of non-local, through-bond effects.</li>
+<li>If changes in QC torsion scans are not accompanied by highly anti-correlated WBOs, the changes are due to non-local, through-space, effects</li>
+<li>When AM1 ELF10 WBOs do not obey the trend found in Figure <a href="#fig:substituted_phenyls">4</a> of the linear relationship with torsion barrier height for the same torsion type in different chemical environments, they are generally caused by non-local, through-space interactions.</li>
+</ol>
+<div id="fig:sub_phenyl_qc_scan" class="fignos">
+<figure>
+<img src="images/example-scans.svg" alt="" /><figcaption><span>Figure 5:</span> <strong>Wiberg bond orders are anticorrelated with QC torsion scans.</strong>
+<strong>[A]</strong> Selected series of molecules with central torsion bonds connecting the nitro group to the phenyl ring highlighted and labeled with AM1 ELF10 WBOs.
+<strong>[B]</strong> QC torsion scans for nitro series in different chemical environments shown in <strong>A</strong>.
+The color of the scans correspond to the colors of the highlighted bonds in <strong>A</strong>.
+Torsion energy barriers increase with increasing AM1 ELF10 WBOs.
+<strong>[C]</strong> Wiberg bond orders calculated at each point in the QC torsion scan using the same level of theory.
+<strong>[D]</strong> Conformer energy of torsion scan plotted against it WBO. All molecules in
+this series have WBO that are anti-correlated with their QC torsion scan. Pearson correlation coefficients (<span class="math inline">\(\rho\)</span>) are shown in the upper right legend.
+<strong>[E]</strong> Same as <strong>A</strong> but with urea at the X<sub>1</sub> position.
+<strong>[F]</strong> Same as <strong>B</strong> but for urea in a series of different chemical environment. Both profiles and
+energy barriers change with AM1 ELF10 WBOs. In addition, the grey scan has higher energy barriers than the olive scan but its ELF10 WBO is lower.
+<strong>[G]</strong> Same as <strong>C</strong> but for urea. Here, the WBO scans all have the same profiles while the QC torsion scan does not.
+<strong>[H]</strong> Same as <strong>D</strong> but here the WBO scans are not always anti-correlated or not as strongly anti-correlated.
+The WBO scan profiles do not change because the changes in the QC torsion scan captures spatial effects while the WBO scans capture conjugation.
+<strong>[I]</strong> Same as <strong>A</strong> with amino at the X<sub>1</sub> position.
+<strong>[J]</strong> Same as <strong>B</strong> but for amino in different chemical environments. While the gold scan is symmetric around 0<sup><span class="math inline">\(\circ\)</span></sup>, the red
+and blue scan are not. The Blue scan is shifted and the red scan has a higher barrier on one side.
+<strong>[K]</strong> Same as <strong>C</strong> but for amino. Here the WBO scans are anticorrelated with the QC torsion scans even if the QC scans have different profiles.
+<strong>[L]</strong> Same as <strong>D</strong> but for amino. Here the WBO scans are atnicorrelted with the QC torsion scans.</figcaption>
+</figure>
+</div>
+<p>Figure <a href="#fig:sub_phenyl_qc_scan">5</a> shows three series of QC torsion scans for the same torsion type in different chemical environments to illustrate this.
+Figure <a href="#fig:sub_phenyl_qc_scan">5</a> A, E and I show three torsion types (nitro, urea and amino) in different chemical environments with their associated AM1 ELF10 WBO.
+Figure <a href="#fig:sub_phenyl_qc_scan">5</a> B, F, and J show their QC torsion scans, <a href="#fig:sub_phenyl_qc_scan">5</a> C, G, and K show their conformation-dependent WBOs along the torsion scan, and <a href="#fig:sub_phenyl_qc_scan">5</a> D, H, and L show the correlations between conformer energies and their conformer-dependent WBOs.</p>
+<p>Figure <a href="#fig:sub_phenyl_qc_scan">5</a> A-D show what is generally the expected behavior of QC torsion scans for the same torsion types in different chemical environments as shown in <a href="#fig:substituted_phenyls">4</a>.
+The QC torsion profiles in ??, B, are all the same, while the torsion barrier heights increase with increasing AM1 ELF10 WBOs.
+WBOs calculated at every point of the QC torsion scan generate a profile that is generally anti-correlated to QC torsion scans as shown in <a href="#fig:sub_phenyl_qc_scan">5</a>, C and D.
+This is in line with chemical intuition.
+Increased conjugation is a result of increased electron population overlap which stabilizes conformations and decreases their energy.</p>
+<p>The second derivative of WBOs along a QC torsion scan also changes depending on how strongly the bond conjugates at its lowest energy conformation.
+For bonds with higher AM1 ELF10 WBOs (Figure <a href="#fig:sub_phenyl_qc_scan">5</a>, A and E) which indicates increased conjugation, the rate of change in the WBO scans are higher than for the same torsion types in environments where the bond does not conjugate as strongly (Figure <a href="#fig:sub_phenyl_qc_scan">5</a>, C and G).
+This also makes sense with respect to chemical intuition.
+At high energy conformations, where electronic orbitals are not oriented to conjugate, WBOs of the same bond in different chemical environments will be closer to each other than at lower energy where electronic delocalization is also a function of long distance chemical changes.
+In other words, conjugation is disrupted similarly for the different chemical environment, but the extent of conjugation is different because of different remote substituents.</p>
+<p>Figure <a href="#fig:sub_phenyl_qc_scan">5</a> E-H shows a different series of the same torsion type in different chemical environments.
+There are several differences between this example and the example discussed in the previous paragraph.
+One, while the torsion types are equivalent for all four molecules shown in Figure <a href="#fig:sub_phenyl_qc_scan">5</a> E, the QC torsion scans do not all have the same profile.
+Relative heights of minima and maxima are different or new minima and maxima are observed.
+In addition, their corresponding conformation-dependent WBO scans are not as strongly anti-correlated with the torsion scans (Figure <a href="#fig:sub_phenyl_qc_scan">5</a>, H) as in Figure <a href="#fig:sub_phenyl_qc_scan">5</a> D.
+Interestingly, the WBO scans do all have similar profiles Figure <a href="#fig:sub_phenyl_qc_scan">5</a> G).
+In this example, the urea is a more bulky functional group than the nitro and amino group in Figures <a href="#fig:sub_phenyl_qc_scan">5</a> A and I.
+The red and grey molecules also have bulky groups at the meta position relative to the torsion being driven.
+This creates different steric clashes for the different molecules and changes their QC torsion profiles relative to each others.
+However, the conformation-dependant WBO scans have similar profiles for the molecules in the series because the non-local through-bond effects are similar for the molecules in this series.
+These WBO scans are not as anti-correlated to the QC scan as in the previous examples (-0.98, -0.99, -1.00 vs 0.7, -0.61, -0.97 and -0.67).
+The blue scan is actually correlated instead of being anti-correlated.
+Because while the electrons can conjugate when the torsion is in a planar position, the clashes of the proximal hydrogen and oxygen increase the energy.
+This small barrier at 0<span class="math inline">\(^\circ\)</span> does not exist in the grey and gold scan because the trimethylamonium is electron withdrawing, that the urea group can better conjugate with the phenyl ring and this stabilization is greater than the steric interactions.</p>
+<p>This series also shows an example of molecules that do not follow the trend shown in Figure <a href="#fig:substituted_phenyls">4</a> where increasing AM1 ELF10 WBO corresponds to increasing torsion barrier heights.
+The grey torsion scan (Figure <a href="#fig:sub_phenyl_qc_scan">5</a> F) has torsion barrier heights that is ~15 kJ/mol greater than the gold torsion scan, while its AM1 ELF10 WBO is lower than the gold molecules (1.10 vs 1.11).
+This happens because the trimethylamonium is a bulky group at the meta position and it interacts with the carbonyl in the urea which causes the the barrier heights to increase.
+We observed this trend of bulky groups on the meta position clashing in most other cases where the AM1 ELF10 WBOs did not follow the trend of increasing torsion barrier heights (SI Figures ??, ??, ??, ??, ??).</p>
+<div id="fig:improper" class="fignos">
+<figure>
+<img src="images/example-improper-angles.svg" alt="" /><figcaption><span>Figure 6:</span> <strong>Improper torsion angles can be coupled with torsion angles being driven in torsion scans.</strong>
+Improper angles of pyramidal nitrogen involved in the torsion scan in Figure <a href="#fig:sub_phenyl_qc_scan">5</a>, J.
+In the blue scan, the trivalent nitrogen is in a pyramidal conformation for the entire scan and the pyramid does not inter-convert.
+In the red scan, the trivalent nitrogen is also in a pyramidal conformation for the entire scan, but the pyramid does inter-convert.
+In the gold scan, the pyramidal nitrogen becomes planar at torsion angles 0<span class="math inline">\(^\circ\)</span> and 180<span class="math inline">\(^\circ\)</span> as the amino group conjugates with the phenyl.</figcaption>
+</figure>
+</div>
+<p>Figures <a href="#fig:sub_phenyl_qc_scan">5</a> I-L show yet another series of torsion scans that exhibit different behaviors than both examples already discussed.
+In this example, QC torsion scans in <a href="#fig:sub_phenyl_qc_scan">5</a> J all have different profiles, specifically, the symmetry around zero is lost in the blue and red scan, albeit differently.
+The blue scan shifted such that the minima are not at 0<span class="math inline">\(^\circ\)</span> and 180<span class="math inline">\(^\circ\)</span> but the barrier heights are equivalent.
+In the red scan, one barrier is ~10 kJ/mol higher than the other.
+However, in these scans, the corresponding WBO scans are anti-correlated with the torsion scans (Figure <a href="#fig:sub_phenyl_qc_scan">5</a>, L).
+Because in these cases, these changes are due to changes in conjugation, not because of non-local steric interactions.
+All of these molecules contain a trivalent nitrogen that can assume both a pyramidal and planar conformation, depending on the amount of electron density in the lone pair.
+The more electron density there is on the lone pair, the greater the angle of the pyramidal nitrogen will be.
+If the lone pairs conjugate with other <span class="math inline">\(\pi\)</span> electrons, the trivalent nitrogen adopts a planar conformation to accommodate conformation and because there is less electron density in the lone pair now that it is delocalized.
+Figure <a href="#fig:improper">6</a> shows how the angle of the trivalent nitrogen involved in the torsion changes over the course of the torsion scan.
+The blue scan, which corresponds with the molecule with a low AM1 ELF10 WBO relative to other bonds of the same torsion type (1.06), does not conjugate with the phenyl ring and remains in a pyramidal with an angle of ~ 35<span class="math inline">\(^\circ\)</span>.
+This creates a chiral center which is reflected in the shift of the blue torsion scan in Figure <a href="#fig:sub_phenyl_qc_scan">5</a> J and the loss of symmetry around zero.
+The red scan which also corresponds to a molecule with a lower AM1 ELF10 WBO relative to other bonds with this torsion type (1.10), does not conjugated and remains pyramidal throughout the entire scan.
+However, in this scan, the chirality of the pyramidal nitrogen does flip, but then does not flip again at ~100<span class="math inline">\(^\circ\)</span> which can explain why the barrier heights are so different from one another.
+Lastly, the gold scan which corresponds to a molecule with a relatively high AM1 ELF10 WBO (1.24) does conjugate at a torsion angle of zero and the trivalent nitrogen becomes planar with an improper torsion angle of zero.</p>
+<p>The general trend we found when looking at other molecules in the subsituted phenyl set (SI Figures ??, ??, ??, ??, ??) was that when trivalent nitrogen were involved in a torsion scan, changes in the torsion profile relative to the same torsion type in different chemical environments, were due to changes in non-local through-bond effects.
+These changes were also universally reflected in the corresponding WBO scans that remained anti-correlated with the QC scan.
+Specifically, torsions involving trivalent nitrogens with relatively lower AM1 ELF10 WBOs for the central bond, were more likely to exhibited such changes.
+In all cases where such changes were observed, the trivalent nitrogens did not form planar conformations at appropriate points in the scan to conjugate with the neighboring phenyl ring.</p>
+<p>Calculating conformation-dependent WBOs for torsion scan is computationally cheap relative to a full QC scan, and the information gleaned from it can be helpful in differentiating non-local through-bond and through-space effects.
+In general, when the conformation-dependent WBO scan is not strongly anti-correlated with the QC torsion scan, the QC scan contains through-space steric effects.
+When the conformation-dependent WBO scans are strongly anti-correlated with QC scans, especially when those profiles have loss of symmetry and the torsion atoms include a trivalent nitrogen, the changes in QC torsion profiles relative to QC scans of the same torsion type in different chemical environments are usually a result from through-bond effects and need to be incorporated in classical torsion force field parameters.</p>
+<h3 id="wiberg-bond-orders-can-be-used-to-interpolate-torsion-parameters">2.4 Wiberg bond orders can be used to interpolate torsion parameters</h3>
+<p>Outline for this section
+1. Find the difference potential of the substituted phenyl torsion scans between MM and QM without torison paramters
+2. Cluster on these profiles and create torsion SMARTS for them
+3. Interpolate torsion parameters using ELF10 WBOs</p>
+<p>Figures to add:
+1. Difference potentials clustered for similar profiles
+2. Table of SMARTS patterns for the different torsion types
+3. Figure showing MM torsion scans generated with interpolated torsion parameters.</p>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
@@ -295,35 +696,35 @@ William L. Jorgensen, David S. Maxwell, Julian Tirado-Rives<br />
 <em>Journal of the American Chemical Society</em> (1996-01) <a href="https://doi.org/fvftxj">https://doi.org/fvftxj</a><br />
 DOI: <a href="https://doi.org/10.1021/ja9621760">10.1021/ja9621760</a></p>
 </div>
-<div id="ref-iWJXRU8T">
-<p>9. <strong>Computational predictions of energy materials using density functional theory</strong><br />
-Anubhav Jain, Yongwoo Shin, Kristin A. Persson<br />
-<em>Nature Reviews Materials</em> (2016-01-11) <a href="https://doi.org/gfgqkc">https://doi.org/gfgqkc</a><br />
-DOI: <a href="https://doi.org/10.1038/natrevmats.2015.4">10.1038/natrevmats.2015.4</a></p>
+<div id="ref-i8ZZOoVS">
+<p>9. <strong>Automated conformational energy fitting for force-field development</strong><br />
+Olgun Guvench, Alexander D. MacKerell<br />
+<em>Journal of Molecular Modeling</em> (2008-05-06) <a href="https://doi.org/bzphqw">https://doi.org/bzphqw</a><br />
+DOI: <a href="https://doi.org/10.1007/s00894-008-0305-0">10.1007/s00894-008-0305-0</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/18458967">18458967</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2864003">PMC2864003</a></p>
 </div>
-<div id="ref-VYvjE9wM">
-<p>10. <strong>Automation of the CHARMM General Force Field (CGenFF) I: Bond Perception and Atom Typing</strong><br />
-K. Vanommeslaeghe, A. D. MacKerell<br />
-<em>Journal of Chemical Information and Modeling</em> (2012-11-28) <a href="https://doi.org/f4gn45">https://doi.org/f4gn45</a><br />
-DOI: <a href="https://doi.org/10.1021/ci300363c">10.1021/ci300363c</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23146088">23146088</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3528824">PMC3528824</a></p>
+<div id="ref-fpE0Y69s">
+<p>10. <strong>Torsional Energy Barriers of Biaryls Could Be Predicted by Electron Richness/Deficiency of Aromatic Rings; Advancement of Molecular Mechanics toward Atom-Type Independence</strong><br />
+Wanlei Wei, Candide Champion, Zhaomin Liu, Stephen J. Barigye, Paul Labute, Nicolas Moitessier<br />
+<em>Journal of Chemical Information and Modeling</em> (2019-08-20) <a href="https://doi.org/ggh677">https://doi.org/ggh677</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jcim.9b00585">10.1021/acs.jcim.9b00585</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31430147">31430147</a></p>
 </div>
-<div id="ref-sHgXuXfO">
-<p>11. <strong>Fixed-Charge Atomistic Force Fields for Molecular Dynamics Simulations in the Condensed Phase: An Overview</strong><br />
-Sereina Riniker<br />
-<em>Journal of Chemical Information and Modeling</em> (2018-03-06) <a href="https://doi.org/gdbz3k">https://doi.org/gdbz3k</a><br />
-DOI: <a href="https://doi.org/10.1021/acs.jcim.8b00042">10.1021/acs.jcim.8b00042</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29510041">29510041</a></p>
+<div id="ref-AWj8hnbG">
+<p>11. <strong>Atom Types Independent Molecular Mechanics Method for Predicting the Conformational Energy of Small Molecules</strong><br />
+Zhaomin Liu, Stephen J. Barigye, Moeed Shahamat, Paul Labute, Nicolas Moitessier<br />
+<em>Journal of Chemical Information and Modeling</em> (2018-01-05) <a href="https://doi.org/gcxm7s">https://doi.org/gcxm7s</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jcim.7b00645">10.1021/acs.jcim.7b00645</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29253333">29253333</a></p>
 </div>
-<div id="ref-WxkLgSJW">
-<p>12. <strong>Biomolecular force fields: where have we been, where are we now, where do we need to go and how do we get there?</strong><br />
-Pnina Dauber-Osguthorpe, A. T. Hagler<br />
-<em>Journal of Computer-Aided Molecular Design</em> (2018-11-30) <a href="https://doi.org/gfw5nm">https://doi.org/gfw5nm</a><br />
-DOI: <a href="https://doi.org/10.1007/s10822-018-0111-4">10.1007/s10822-018-0111-4</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30506158">30506158</a></p>
+<div id="ref-Vx7ALVw2">
+<p>12. <strong>Hyperconjugation not steric repulsion leads to the staggered structure of ethane</strong><br />
+Vojislava Pophristic, Lionel Goodman<br />
+<em>Nature</em> (2001-05) <a href="https://doi.org/dff6j7">https://doi.org/dff6j7</a><br />
+DOI: <a href="https://doi.org/10.1038/35079036">10.1038/35079036</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/11385566">11385566</a></p>
 </div>
-<div id="ref-PggAEYqK">
-<p>13. <strong>Experimental and theoretical studies of the barrier to rotation about the N-C.alpha. and C.alpha.-C’ bonds (.vphi. and .psi.) in amides and peptides</strong><br />
-A. T. Hagler, L. Leiserowitz, M. Tuval<br />
-<em>Journal of the American Chemical Society</em> (1976-07) <a href="https://doi.org/dnfqr2">https://doi.org/dnfqr2</a><br />
-DOI: <a href="https://doi.org/10.1021/ja00431a045">10.1021/ja00431a045</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/932366">932366</a></p>
+<div id="ref-1DVkKVgPL">
+<p>13. <strong>Gauche Effect in 1,2-Difluoroethane. Hyperconjugation, Bent Bonds, Steric Repulsion</strong><br />
+Lionel Goodman, Hongbing Gu, Vojislava Pophristic<br />
+<em>The Journal of Physical Chemistry A</em> (2005-02) <a href="https://doi.org/dtg782">https://doi.org/dtg782</a><br />
+DOI: <a href="https://doi.org/10.1021/jp046290d">10.1021/jp046290d</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/16833433">16833433</a></p>
 </div>
 <div id="ref-13fQUQyf9">
 <p>14. <strong>Accuracy evaluation and addition of improved dihedral parameters for the MMFF94s</strong><br />
@@ -337,37 +738,322 @@ Lei Huang, Benoît Roux<br />
 <em>Journal of Chemical Theory and Computation</em> (2013-07-25) <a href="https://doi.org/f47z2j">https://doi.org/f47z2j</a><br />
 DOI: <a href="https://doi.org/10.1021/ct4003477">10.1021/ct4003477</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/24223528">24223528</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3819940">PMC3819940</a></p>
 </div>
-<div id="ref-ktnbcfT3">
-<p>16. <strong>ff19SB: Amino-Acid Specific Protein Backbone Parameters Trained Against Quantum Mechanics Energy Surfaces in Solution</strong><br />
-Chuan Tian, Koushik Kasavajhala, Kellon Belfon, Lauren Raguette, He Huang, Angela Migues, John Bickel, Yuzhang Wang, Jorge Pincay, Qin Wu, Carlos Simmerling<br />
-(2019-06-17) <a href="https://doi.org/ggrbnt">https://doi.org/ggrbnt</a><br />
-DOI: <a href="https://doi.org/10.26434/chemrxiv.8279681.v1">10.26434/chemrxiv.8279681.v1</a></p>
+<div id="ref-jcQ6P6uD">
+<p>16. <strong>Hierarchical atom type definitions and extensible all-atom force fields</strong><br />
+Zhao Jin, Chunwei Yang, Fenglei Cao, Feng Li, Zhifeng Jing, Long Chen, Zhe Shen, Liang Xin, Sijia Tong, Huai Sun<br />
+<em>Journal of Computational Chemistry</em> (2016-03-15) <a href="https://doi.org/f8bmzq">https://doi.org/f8bmzq</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.24244">10.1002/jcc.24244</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26537332">26537332</a></p>
 </div>
-<div id="ref-Vx7ALVw2">
-<p>17. <strong>Hyperconjugation not steric repulsion leads to the staggered structure of ethane</strong><br />
-Vojislava Pophristic, Lionel Goodman<br />
-<em>Nature</em> (2001-05) <a href="https://doi.org/dff6j7">https://doi.org/dff6j7</a><br />
-DOI: <a href="https://doi.org/10.1038/35079036">10.1038/35079036</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/11385566">11385566</a></p>
+<div id="ref-VYvjE9wM">
+<p>17. <strong>Automation of the CHARMM General Force Field (CGenFF) I: Bond Perception and Atom Typing</strong><br />
+K. Vanommeslaeghe, A. D. MacKerell<br />
+<em>Journal of Chemical Information and Modeling</em> (2012-11-28) <a href="https://doi.org/f4gn45">https://doi.org/f4gn45</a><br />
+DOI: <a href="https://doi.org/10.1021/ci300363c">10.1021/ci300363c</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23146088">23146088</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3528824">PMC3528824</a></p>
 </div>
-<div id="ref-1DVkKVgPL">
-<p>18. <strong>Gauche Effect in 1,2-Difluoroethane. Hyperconjugation, Bent Bonds, Steric Repulsion</strong><br />
-Lionel Goodman, Hongbing Gu, Vojislava Pophristic<br />
-<em>The Journal of Physical Chemistry A</em> (2005-02) <a href="https://doi.org/dtg782">https://doi.org/dtg782</a><br />
-DOI: <a href="https://doi.org/10.1021/jp046290d">10.1021/jp046290d</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/16833433">16833433</a></p>
+<div id="ref-Z8BM4e7W">
+<p>18. <strong>CHARMM general force field: A force field for drug-like molecules compatible with the CHARMM all-atom additive biological force fields</strong><br />
+K. Vanommeslaeghe, E. Hatcher, C. Acharya, S. Kundu, S. Zhong, J. Shim, E. Darian, O. Guvench, P. Lopes, I. Vorobyov, A. D. Mackerell<br />
+<em>Journal of Computational Chemistry</em> (2009) <a href="https://doi.org/fgkjs4">https://doi.org/fgkjs4</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.21367">10.1002/jcc.21367</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/19575467">19575467</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2888302">PMC2888302</a></p>
 </div>
-<div id="ref-AWj8hnbG">
-<p>19. <strong>Atom Types Independent Molecular Mechanics Method for Predicting the Conformational Energy of Small Molecules</strong><br />
-Zhaomin Liu, Stephen J. Barigye, Moeed Shahamat, Paul Labute, Nicolas Moitessier<br />
-<em>Journal of Chemical Information and Modeling</em> (2018-01-05) <a href="https://doi.org/gcxm7s">https://doi.org/gcxm7s</a><br />
-DOI: <a href="https://doi.org/10.1021/acs.jcim.7b00645">10.1021/acs.jcim.7b00645</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29253333">29253333</a></p>
+<div id="ref-YmRgHfeU">
+<p>19. <strong>Development and testing of a general amber force field</strong><br />
+Junmei Wang, Romain M. Wolf, James W. Caldwell, Peter A. Kollman, David A. Case<br />
+<em>Journal of Computational Chemistry</em> (2004-07-15) <a href="https://doi.org/cdmcnb">https://doi.org/cdmcnb</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.20035">10.1002/jcc.20035</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/15116359">15116359</a></p>
 </div>
-<div id="ref-fpE0Y69s">
-<p>20. <strong>Torsional Energy Barriers of Biaryls Could Be Predicted by Electron Richness/Deficiency of Aromatic Rings; Advancement of Molecular Mechanics toward Atom-Type Independence</strong><br />
-Wanlei Wei, Candide Champion, Zhaomin Liu, Stephen J. Barigye, Paul Labute, Nicolas Moitessier<br />
-<em>Journal of Chemical Information and Modeling</em> (2019-08-20) <a href="https://doi.org/ggh677">https://doi.org/ggh677</a><br />
-DOI: <a href="https://doi.org/10.1021/acs.jcim.9b00585">10.1021/acs.jcim.9b00585</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31430147">31430147</a></p>
+<div id="ref-1F62Qo2RU">
+<p>20. <strong>QUBEKit: Automating the Derivation of Force Field Parameters from Quantum Mechanics</strong><br />
+Joshua T. Horton, Alice E. A. Allen, Leela S. Dodda, Daniel J. Cole<br />
+<em>Journal of Chemical Information and Modeling</em> (2019-02-11) <a href="https://doi.org/gfvvf9">https://doi.org/gfvvf9</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jcim.8b00767">10.1021/acs.jcim.8b00767</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30742438">30742438</a></p>
+</div>
+<div id="ref-JJX4iDz2">
+<p>21. <strong>Characterization of Biaryl Torsional Energetics and its Treatment in OPLS All-Atom Force Fields</strong><br />
+Markus K. Dahlgren, Patric Schyman, Julian Tirado-Rives, William L. Jorgensen<br />
+<em>Journal of Chemical Information and Modeling</em> (2013-05-13) <a href="https://doi.org/f4xn5p">https://doi.org/f4xn5p</a><br />
+DOI: <a href="https://doi.org/10.1021/ci4001597">10.1021/ci4001597</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23621692">23621692</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3707137">PMC3707137</a></p>
+</div>
+<div id="ref-1HYTTY1PU">
+<p>22. <strong>Escaping Atom Types in Force Fields Using Direct Chemical Perception</strong><br />
+David L. Mobley, Caitlin C. Bannan, Andrea Rizzi, Christopher I. Bayly, John D. Chodera, Victoria T. Lim, Nathan M. Lim, Kyle A. Beauchamp, David R. Slochower, Michael R. Shirts, … Peter K. Eastman<br />
+<em>Journal of Chemical Theory and Computation</em> (2018-10-11) <a href="https://doi.org/gffnf3">https://doi.org/gffnf3</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jctc.8b00640">10.1021/acs.jctc.8b00640</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30351006">30351006</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6245550">PMC6245550</a></p>
+</div>
+<div id="ref-15wrEpSer">
+<p>23. <strong>Elucidating Hyperconjugation from Electronegativity to Predict Drug Conformational Energy in a High Throughput Manner</strong><br />
+Zhaomin Liu, Joshua Pottel, Moeed Shahamat, Anna Tomberg, Paul Labute, Nicolas Moitessier<br />
+<em>Journal of Chemical Information and Modeling</em> (2016-04-12) <a href="https://doi.org/f8kztt">https://doi.org/f8kztt</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jcim.6b00012">10.1021/acs.jcim.6b00012</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27028941">27028941</a></p>
+</div>
+<div id="ref-16GNoHAFY">
+<p>24. <strong>Atom Type Independent Modeling of the Conformational Energy of Benzylic, Allylic, and Other Bonds Adjacent to Conjugated Systems</strong><br />
+Candide Champion, Stephen J. Barigye, Wanlei Wei, Zhaomin Liu, Paul Labute, Nicolas Moitessier<br />
+<em>Journal of Chemical Information and Modeling</em> (2019-10-07) <a href="https://doi.org/ggh676">https://doi.org/ggh676</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jcim.9b00581">10.1021/acs.jcim.9b00581</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31589815">31589815</a></p>
+</div>
+<div id="ref-ZAAgsuwk">
+<p>25. <strong>The Dependence of Interatomic Distance on Single Bond-Double Bond Resonance <sup>1</sup></strong><br />
+Linus Pauling, L. O. Brockway, J. Y. Beach<br />
+<em>Journal of the American Chemical Society</em> (1935-12) <a href="https://doi.org/fswdwx">https://doi.org/fswdwx</a><br />
+DOI: <a href="https://doi.org/10.1021/ja01315a105">10.1021/ja01315a105</a></p>
+</div>
+<div id="ref-QY82Gb6W">
+<p>26. <strong>The electronic structure of some polyenes and aromatic molecules. VII. Bonds of fractional order by the molecular orbital method</strong><br />
+Proceedings of the Royal Society of London. Series A. Mathematical and Physical Sciences<br />
+(1997-01) <a href="https://doi.org/bnqx76">https://doi.org/bnqx76</a><br />
+DOI: <a href="https://doi.org/10.1098/rspa.1939.0006">10.1098/rspa.1939.0006</a></p>
+</div>
+<div id="ref-9WKaagH4">
+<p>27. <strong>Electronic Population Analysis on LCAO–MO Molecular Wave Functions. I</strong><br />
+R. S. Mulliken<br />
+<em>The Journal of Chemical Physics</em> (1955-10) <a href="https://doi.org/d24mtt">https://doi.org/d24mtt</a><br />
+DOI: <a href="https://doi.org/10.1063/1.1740588">10.1063/1.1740588</a></p>
+</div>
+<div id="ref-BES2Ksiq">
+<p>28. <strong>Application of the pople-santry-segal CNDO method to the cyclopropylcarbinyl and cyclobutyl cation and to bicyclobutane</strong><br />
+K. B. Wiberg<br />
+<em>Tetrahedron</em> (1968-01) <a href="https://doi.org/fvwkkh">https://doi.org/fvwkkh</a><br />
+DOI: <a href="https://doi.org/10.1016/0040-4020(68)88057-3">10.1016/0040-4020(68)88057-3</a></p>
+</div>
+<div id="ref-8uYd8cxr">
+<p>29. <strong>Charge, bond order and valence in the AB initio SCF theory</strong><br />
+I. Mayer<br />
+<em>Chemical Physics Letters</em> (1983-05) <a href="https://doi.org/b5m8r5">https://doi.org/b5m8r5</a><br />
+DOI: <a href="https://doi.org/10.1016/0009-2614(83)80005-0">10.1016/0009-2614(83)80005-0</a></p>
+</div>
+<div id="ref-vfRrdWeG">
+<p>30. <strong>A maximum bond order principle</strong><br />
+Karl Jug<br />
+<em>Journal of the American Chemical Society</em> (1977-11) <a href="https://doi.org/dvfv63">https://doi.org/dvfv63</a><br />
+DOI: <a href="https://doi.org/10.1021/ja00466a009">10.1021/ja00466a009</a></p>
+</div>
+<div id="ref-11ndqhfsy">
+<p>31. <strong>Bond Orders of Homonuclear Diatomic Molecules</strong><br />
+Peter Politzer<br />
+<em>The Journal of Chemical Physics</em> (1969-03-15) <a href="https://doi.org/d28qgt">https://doi.org/d28qgt</a><br />
+DOI: <a href="https://doi.org/10.1063/1.1671457">10.1063/1.1671457</a></p>
+</div>
+<div id="ref-mgZozbxT">
+<p>32. <strong>The MMP2 calculational method</strong><br />
+Joseph T. Sprague, Julia C. Tai, Young Yuh, Norman L. Allinger<br />
+<em>Journal of Computational Chemistry</em> (1987-07) <a href="https://doi.org/dpjxnn">https://doi.org/dpjxnn</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.540080504">10.1002/jcc.540080504</a></p>
+</div>
+<div id="ref-F7LEPYAx">
+<p>33. <strong>Molecular mechanics (MM3) calculations on conjugated hydrocarbons</strong><br />
+Norman L. Allinger, Fanbing Li, Liqun Yan, Julia C. Tai<br />
+<em>Journal of Computational Chemistry</em> (1990-08) <a href="https://doi.org/fs344c">https://doi.org/fs344c</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.540110709">10.1002/jcc.540110709</a></p>
+</div>
+<div id="ref-waPeRcgV">
+<p>34. <strong>A new force field for molecular mechanical simulation of nucleic acids and proteins</strong><br />
+Scott J. Weiner, Peter A. Kollman, David A. Case, U. Chandra Singh, Caterina Ghio, Guliano Alagona, Salvatore Profeta, Paul Weiner<br />
+<em>Journal of the American Chemical Society</em> (1984-02) <a href="https://doi.org/dcvwwx">https://doi.org/dcvwwx</a><br />
+DOI: <a href="https://doi.org/10.1021/ja00315a051">10.1021/ja00315a051</a></p>
+</div>
+<div id="ref-QlopodHU">
+<p>35. <strong>Bond order and valence indices: A personal account</strong><br />
+I. Mayer<br />
+<em>Journal of Computational Chemistry</em> (2007-01-15) <a href="https://doi.org/ddssrj">https://doi.org/ddssrj</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.20494">10.1002/jcc.20494</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/17066501">17066501</a></p>
+</div>
+<div id="ref-tnSqySMX">
+<p>36. <strong>Development and use of quantum mechanical molecular models. 76. AM1: a new general purpose quantum mechanical molecular model</strong><br />
+Michael J. S. Dewar, Eve G. Zoebisch, Eamonn F. Healy, James J. P. Stewart<br />
+<em>Journal of the American Chemical Society</em> (1985-06) <a href="https://doi.org/fd8bwp">https://doi.org/fd8bwp</a><br />
+DOI: <a href="https://doi.org/10.1021/ja00299a024">10.1021/ja00299a024</a></p>
+</div>
+<div id="ref-dgUvu4tX">
+<p>37. <strong>Optimization of parameters for semiempirical methods I. Method</strong><br />
+James J. P. Stewart<br />
+<em>Journal of Computational Chemistry</em> (1989-03) <a href="https://doi.org/cg5pck">https://doi.org/cg5pck</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.540100208">10.1002/jcc.540100208</a></p>
+</div>
+<div id="ref-YC6qkEYS">
+<p>38. <strong>1.1: An Open-Source Electronic Structure Program Emphasizing Automation, Advanced Libraries, and Interoperability</strong><br />
+Robert M. Parrish, Lori A. Burns, Daniel G. A. Smith, Andrew C. Simmonett, A. Eugene DePrince, Edward G. Hohenstein, Uğur Bozkaya, Alexander Yu. Sokolov, Roberto Di Remigio, Ryan M. Richard, … C. David Sherrill<br />
+<em>Journal of Chemical Theory and Computation</em> (2017-06-06) <a href="https://doi.org/gcz64j">https://doi.org/gcz64j</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jctc.7b00174">10.1021/acs.jctc.7b00174</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28489372">28489372</a></p>
+</div>
+<div id="ref-K8bdDsCu">
+<p>39. <strong>On the Non‐Orthogonality Problem Connected with the Use of Atomic Wave Functions in the Theory of Molecules and Crystals</strong><br />
+Per‐Olov Löwdin<br />
+<em>The Journal of Chemical Physics</em> (1950-03) <a href="https://doi.org/dj2c35">https://doi.org/dj2c35</a><br />
+DOI: <a href="https://doi.org/10.1063/1.1747632">10.1063/1.1747632</a></p>
+</div>
+<div id="ref-1BEyXJiMo">
+<p>40. <strong>On the quantum theory of valence and bonding from the ab intio standpoint</strong><br />
+Mario A. Natiello, Jorge A. Medrano<br />
+<em>Chemical Physics Letters</em> (1984-03) <a href="https://doi.org/bdfk5f">https://doi.org/bdfk5f</a><br />
+DOI: <a href="https://doi.org/10.1016/0009-2614(84)85645-6">10.1016/0009-2614(84)85645-6</a></p>
+</div>
+<div id="ref-r3xLNmRT">
+<p>41. <strong>Can we treat ab initio atomic charges and bond orders as conformation-independent electronic structure descriptors?</strong><br />
+T. Yu. Nikolaienko, L. A. Bulavin, D. M. Hovorun<br />
+<em>RSC Advances</em> (2016) <a href="https://doi.org/gf66tp">https://doi.org/gf66tp</a><br />
+DOI: <a href="https://doi.org/10.1039/c6ra17055b">10.1039/c6ra17055b</a></p>
+</div>
+<div id="ref-hIon1SaZ">
+<p>42. <strong>Resonance interactions in acyclic systems. 3. Formamide internal rotation revisited. Charge and energy redistribution along the C-N bond rotational pathway</strong><br />
+Kenneth B. Wiberg, Curt M. Breneman<br />
+<em>Journal of the American Chemical Society</em> (1992-01) <a href="https://doi.org/c85zcc">https://doi.org/c85zcc</a><br />
+DOI: <a href="https://doi.org/10.1021/ja00029a005">10.1021/ja00029a005</a></p>
+</div>
+<div id="ref-1G1ccz54w">
+<p>43. <strong>Conformer Generation with OMEGA: Algorithm and Validation Using High Quality Structures from the Protein Databank and Cambridge Structural Database</strong><br />
+Paul C. D. Hawkins, A. Geoffrey Skillman, Gregory L. Warren, Benjamin A. Ellingson, Matthew T. Stahl<br />
+<em>Journal of Chemical Information and Modeling</em> (2010-03-17) <a href="https://doi.org/d4rb6g">https://doi.org/d4rb6g</a><br />
+DOI: <a href="https://doi.org/10.1021/ci100031x">10.1021/ci100031x</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/20235588">20235588</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2859685">PMC2859685</a></p>
+</div>
+<div id="ref-17YEERBX3">
+<p>44. <strong>Optimization of Gaussian-type basis sets for local spin density functional calculations. Part I. Boron through neon, optimization technique and validation</strong><br />
+Nathalie Godbout, Dennis R. Salahub, Jan Andzelm, Erich Wimmer<br />
+<em>Canadian Journal of Chemistry</em> (1992-02-01) <a href="https://doi.org/c78qjn">https://doi.org/c78qjn</a><br />
+DOI: <a href="https://doi.org/10.1139/v92-079">10.1139/v92-079</a></p>
+</div>
+<div id="ref-flKRoCNc">
+<p>45. <strong>Density‐functional thermochemistry. III. The role of exact exchange</strong><br />
+Axel D. Becke<br />
+<em>The Journal of Chemical Physics</em> (1993-04) <a href="https://doi.org/d2fq9j">https://doi.org/d2fq9j</a><br />
+DOI: <a href="https://doi.org/10.1063/1.464913">10.1063/1.464913</a></p>
+</div>
+<div id="ref-YPDz9hB3">
+<p>46. <strong>A consistent and accurate <em>ab initio</em> parametrization of density functional dispersion correction (DFT-D) for the 94 elements H-Pu</strong><br />
+Stefan Grimme, Jens Antony, Stephan Ehrlich, Helge Krieg<br />
+<em>The Journal of Chemical Physics</em> (2010-04-21) <a href="https://doi.org/bnt82x">https://doi.org/bnt82x</a><br />
+DOI: <a href="https://doi.org/10.1063/1.3382344">10.1063/1.3382344</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/20423165">20423165</a></p>
+</div>
+<div id="ref-CqesmIsy">
+<p>47. <strong>Effect of the damping function in dispersion corrected density functional theory</strong><br />
+Stefan Grimme, Stephan Ehrlich, Lars Goerigk<br />
+<em>Journal of Computational Chemistry</em> (2011-05) <a href="https://doi.org/b3ztst">https://doi.org/b3ztst</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.21759">10.1002/jcc.21759</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/21370243">21370243</a></p>
+</div>
+<div id="ref-2hGWnSJL">
+<p>48. <strong>Benchmarking Commercial Conformer Ensemble Generators</strong><br />
+Nils-Ole Friedrich, Christina de Bruyn Kops, Florian Flachsenberg, Kai Sommer, Matthias Rarey, Johannes Kirchmair<br />
+<em>Journal of Chemical Information and Modeling</em> (2017-10-18) <a href="https://doi.org/gb4v2v">https://doi.org/gb4v2v</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jcim.7b00505">10.1021/acs.jcim.7b00505</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28967749">28967749</a></p>
+</div>
+<div id="ref-14qKIxxbD">
+<p>49. <strong>Resonance interactions in acyclic systems</strong><br />
+K. B. Wiberg, C. M. Breneman, K. E. Laidig, R. E. Rosenberg<br />
+<em>Pure and Applied Chemistry</em> (1989-01-01) <a href="https://doi.org/c6rd43">https://doi.org/c6rd43</a><br />
+DOI: <a href="https://doi.org/10.1351/pac198961040635">10.1351/pac198961040635</a></p>
+</div>
+<div id="ref-16hZpgNca">
+<p>50. <strong>QUACPAC 2.0.2.2 — Applications, v2019.Nov.2</strong><a href="https://docs.eyesopen.com/applications/quacpac/index.html">https://docs.eyesopen.com/applications/quacpac/index.html</a></p>
+</div>
+<div id="ref-LxrgIkt0">
+<p>51. <strong>Fast, efficient generation of high-quality atomic charges. AM1-BCC model: II. Parameterization and validation</strong><br />
+Araz Jakalian, David B. Jack, Christopher I. Bayly<br />
+<em>Journal of Computational Chemistry</em> (2002-10-18) <a href="https://doi.org/cktk6g">https://doi.org/cktk6g</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.10128">10.1002/jcc.10128</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/12395429">12395429</a></p>
+</div>
+<div id="ref-3z27USyZ">
+<p>52. <strong>The Effect of Structure upon the Reactions of Organic Compounds. Benzene Derivatives</strong><br />
+Louis P. Hammett<br />
+<em>Journal of the American Chemical Society</em> (1937-01) <a href="https://doi.org/dz8d4r">https://doi.org/dz8d4r</a><br />
+DOI: <a href="https://doi.org/10.1021/ja01280a022">10.1021/ja01280a022</a></p>
+</div>
+<div id="ref-1EJC88xIC">
+<p>53. <strong>A survey of Hammett substituent constants and resonance and field parameters</strong><br />
+Corwin. Hansch, A. Leo, R. W. Taft<br />
+<em>Chemical Reviews</em> (1991-03) <a href="https://doi.org/dwwqnk">https://doi.org/dwwqnk</a><br />
+DOI: <a href="https://doi.org/10.1021/cr00002a004">10.1021/cr00002a004</a></p>
+</div>
+<div id="ref-19YdfyNRY">
+<p>54. <strong>Approximate Self‐Consistent Molecular Orbital Theory. I. Invariant Procedures</strong><br />
+J. A. Pople, D. P. Santry, G. A. Segal<br />
+<em>The Journal of Chemical Physics</em> (1965-11-15) <a href="https://doi.org/fg5fkq">https://doi.org/fg5fkq</a><br />
+DOI: <a href="https://doi.org/10.1063/1.1701475">10.1063/1.1701475</a></p>
+</div>
+<div id="ref-12mptWjWL">
+<p>55. <strong>Corrected small basis set Hartree-Fock method for large systems</strong><br />
+Rebecca Sure, Stefan Grimme<br />
+<em>Journal of Computational Chemistry</em> (2013-07-15) <a href="https://doi.org/f42979">https://doi.org/f42979</a><br />
+DOI: <a href="https://doi.org/10.1002/jcc.23317">10.1002/jcc.23317</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23670872">23670872</a></p>
 </div>
 </div>
+<h2 class="page_break_before" id="SI">Supporting Information</h2>
+<h3 id="the-mayer-bond-order-mbo-extends-the-wiberg-bond-order-wbo-to-non-minimal-basis-sets">The Mayer bond order (MBO) extends the Wiberg bond order (WBO) to non-minimal basis sets</h3>
+<p>The WBO was developed within Pople’s complete neglect of differential overlap (CNDO) formalism <span class="citation" data-cites="19YdfyNRY BES2Ksiq">[<a href="#ref-BES2Ksiq" role="doc-biblioref">28</a>,<a href="#ref-19YdfyNRY" role="doc-biblioref">54</a>]</span> and is defined as:</p>
+<p><span class="math display">\[\begin{equation}
+    W_{AB} = \sum_{\mu \in A}\sum_{\nu \in B} |D_{\mu \nu}|^2
+\end{equation}\]</span>{#eq:wiberg}</p>
+<p>Where the quadradic sum of the electron density <span class="math inline">\(D\)</span> is over occupied orbitals <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> in atoms A and B in the bond.
+However, the WBO does not extend beyond semi-empirical methods where the overlap matrix is assumed to to be diagonal.
+At higher levels of QM theory where non-minimal basis sets are used, <span class="math inline">\(W_{AB}\)</span> would give values that increase in size with the basis sets so they need to normalized.
+In Psi4 <span class="citation" data-cites="YC6qkEYS">[<a href="#ref-YC6qkEYS" role="doc-biblioref">38</a>]</span>, The Löwdin normalization scheme <span class="citation" data-cites="K8bdDsCu">[<a href="#ref-K8bdDsCu" role="doc-biblioref">39</a>]</span> is used to calculate the WBOs.
+In this scheme, the non-orthogonal basis set  are transformed by a linear transformation ’ = <span class="math inline">\(\bm{S}^{-\frac{1}{2}}\bm{\phi}\)</span> Where  is the the overlap matrix.</p>
+<p>Mayer <span class="citation" data-cites="QlopodHU">[<a href="#ref-QlopodHU" role="doc-biblioref">35</a>]</span> incorporates  directly in the bond order calculation:</p>
+<p><span class="math display">\[\begin{equation}
+    B_{AB} = \sum_{\mu \in A}\sum_{\nu \in B} (\bm{DS})_{\mu\nu} (\bm{DS})_{\nu\mu}
+\end{equation}\]</span>{#eq:mayer}</p>
+<p>Where <span class="math inline">\(\bm{D}\)</span> is the density matrix for occupied orbitals for closed shell systems, and <span class="math inline">\(\bm{S}\)</span> is the overlap matrix.
+This equation reduces to the WBO when orthonormalized basis sets are used.</p>
+<h3 id="comparing-mbo-and-wbo-at-different-levels-of-qc-theory">Comparing MBO and WBO at different levels of QC theory</h3>
+<p>Psi4 <span class="citation" data-cites="YC6qkEYS">[<a href="#ref-YC6qkEYS" role="doc-biblioref">38</a>]</span> implements both Wiberg-Löwdin and Mayer bond orders.
+Here we compare WBO and MBOs at different levels of theory.</p>
+<h4 id="differences-in-conformation-dependent-bond-order-distributions-between-wbo-and-mbo-at-different-levels-of-qc-theory">Differences in conformation-dependent bond order distributions between WBO and MBO at different levels of QC theory</h4>
+<div id="fig:wbo-mbo-comparison" class="fignos">
+<figure>
+<img src="images/SI-wbo-dist.svg" alt="" /><figcaption><span>Figure 7:</span> <strong>Bond order distributions for rotatable bonds over 232 conformers for Mayer and Wiberg at different levels of QM theory.</strong>
+<strong>[A]</strong> Gefitinb, with atoms numbered highlighted to correspond to numbers and colors on distribution plots.
+<strong>[B]</strong> Distribution of AM1 WBOs for rotatable bonds.
+<strong>[C]</strong> Same as <strong>[B]</strong> but for MBOs at HF3C.
+<strong>[D]</strong> Same as <strong>[B]</strong> calculated at HF3C.
+<strong>[E]</strong> Same as <strong>[B]</strong> but for MBOs at calculated at B3LYP.
+<strong>[F]</strong> Same as <strong>[B]</strong> but calculated at B3LYP.</figcaption>
+</figure>
+</div>
+<p>Both the WBO and MBO are functions of electron density which is conformation dependent, so they will change with conformation.
+As we have shown in <a href="#fig:wbo_var_corr">2</a>, conjugated bonds have higher variance than non-conjugated bonds.
+Different QC methods and ways of calculating bond orders result in differences in bond order values and conformation-dependent variance.
+In Figure <a href="#fig:wbo-mbo-comparison">7</a> we compare AM1 <span class="citation" data-cites="tnSqySMX">[<a href="#ref-tnSqySMX" role="doc-biblioref">36</a>]</span> WBOs, HF-3c <span class="citation" data-cites="12mptWjWL">[<a href="#ref-12mptWjWL" role="doc-biblioref">55</a>]</span> MBOs and WBOs, and B3LYP(BJ)/DZVP <span class="citation" data-cites="YPDz9hB3 17YEERBX3 flKRoCNc CqesmIsy">[<a href="#ref-17YEERBX3" role="doc-biblioref">44</a>,<a href="#ref-flKRoCNc" role="doc-biblioref">45</a>,<a href="#ref-YPDz9hB3" role="doc-biblioref">46</a>,<a href="#ref-CqesmIsy" role="doc-biblioref">47</a>]</span> MBOs and WBOs.
+Figure <a href="#fig:wbo-mbo-comparison">7</a> <strong>A</strong> shows Gefitinib, a kinase inhibitors, with its rotatable bonds highlighted to correspond to the colors of the distributions shown in the other panels of Figure <a href="#fig:wbo-mbo-comparison">7</a>.
+The bond order distributions shown in Figure <a href="#fig:wbo-mbo-comparison">7</a> were calculated over 232 Omega <span class="citation" data-cites="1G1ccz54w">[<a href="#ref-1G1ccz54w" role="doc-biblioref">43</a>]</span> generated conformers of Gefitinib which were then geometry optimized with the methods used to calculate bond orders.</p>
+<p>For AM1 we only calculated WBOs because the MBO and WBO are equivalent at that level of theory.
+AM1 WBO distributions have lower variance than B3lyp for the non-conjugated bonds, but have significantly higher variance and more modes for the more conjugated bonds.</p>
+<p>WBO and MBO distributions calculated from HF-3c optimized structures (Figure <a href="#fig:wbo-mbo-comparison">7</a> <strong>C</strong> and <strong>D</strong>) had lowest variances than other QC methods.
+In addition, both MBO and WBOs have similar values and shapes of their distributions.
+This might be a result of HF-3c using a small, Gaussian atomic orbital (AO) basis set.
+As discussed in the previous section, the MBO reduces to the WBO when orthonormalized basis AO are used. In HF-3c, a small, Gaussian basis set is used which might be the reason why the MBOs and WBOs are so similar.</p>
+<p>When using larger basis sets (B3LYP(BJ)/DZVP), the Mayer and Wiberg bond orders differ significantly.
+First, MBOs have significantly higher variance with respect to conformation.
+In addition, WBO values are significantly higher than Mayer and AM1 and HF3C WBOs.
+The basis sets are Löwdin normalized, but the values still seem to grow with larger basis sets.</p>
+<h4 id="differences-in-conformation-dependent-bond-order-correlation-structures-between-wbo-and-mbo-at-different-levels-of-qc-theory">Differences in conformation-dependent bond order correlation structures between WBO and MBO at different levels of QC theory</h4>
+<div id="fig:correlations" class="fignos">
+<figure>
+<img src="images/SI-wbo-correlations.svg" alt="" /><figcaption><span>Figure 8:</span> <strong>Bond order correlations with respect to conformations for Mayer and Wiberg at different levels of QM theory.</strong>
+<strong>[A]</strong> Gefitinb, with atoms numbered highlighted to correspond to numbers and colors on distribution plots.
+<strong>[B]</strong> Pearson correlation coefficient of AM1 WBOs for every bond against every bond over 232 conformations.
+<strong>[C]</strong> Same as <strong>[B]</strong> but for MBOs at HF3C.
+<strong>[D]</strong> Same as <strong>[B]</strong> calculated at HF3C.
+<strong>[E]</strong> Same as <strong>[B]</strong> but for MBOs at calculated at B3LYP.
+<strong>[F]</strong> Same as <strong>[B]</strong> but calculated at B3LYP.</figcaption>
+</figure>
+</div>
+<p>As we have shown in Figure <a href="#fig:wbo_var_corr">2</a>, conjugated systems have strongly correlated and anti-correlated bond orders with respect to conformations.
+Figure <a href="#fig:correlations">8</a> compares such correlation maps and their resulting structures for the bond orders calculated in Figure <a href="#fig:wbo-mbo-comparison">7</a>.</p>
+<p>Correlation plots from HF-3c MBOs and WBOs (Figures <a href="#fig:correlations">8</a> <strong>C</strong> and <strong>D</strong>) have structures that are very similar to each other.
+This result is similar to Figures <a href="#fig:wbo-mbo-comparison">7</a> <strong>C</strong> and <strong>D</strong> where the distributions were also very similar.
+However, the correlation structures of MBOs and WBOs calculated at B3LYP(BJ)/DZVP are different from each other.
+MBOs show stronger correlations and anti-correlations for local conjugated systems.
+For example, the bonds in the phenyl ring (alternating correlated and anti-correlated square formed by bonds 24-29) are all alternatively strongly correlated and anti-correlated.
+In addition, bonds 19-23 and 23-24 are strongly correlated with each other and the quinazoline. The WBos calculated both at B3LYP(BJ)/DZVP and AM1 still show alternating correlated and anti-correlated bond orders for the phenyl ring, albeit not as strongly as seen for MBOs.
+However, there is also a diffusion of the coupling to bonds outside of the phenyl ring. Bonds 24-25 and 24-29 are also coupled with quinazoline the bonds between the qunazoline and the phenyl (19-23 and 23-24).</p>
+<p>From these results it is not clear which bond order is better at capturing electronic coupling in larger conjugated systems.
+Further investigation is needed, specifically for deciding if MBO or WBO would be better at differentiating steric and resonance contributions to QC torsion scans discussed in .
+It is encouraging to see that both AM1 and B3LYP(BJ)/DZVP WBOs generate such similar correlation structures.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>For non-minimal basis sets, AOs are often non-orthogonal and require normalization for the WBO to be valid. In the case of WBOs in Psi4 <span class="citation" data-cites="YC6qkEYS">[<a href="#ref-YC6qkEYS" role="doc-biblioref">38</a>]</span>, the Löwdin normalization <span class="citation" data-cites="K8bdDsCu 1BEyXJiMo">[<a href="#ref-K8bdDsCu" role="doc-biblioref">39</a>,<a href="#ref-1BEyXJiMo" role="doc-biblioref">40</a>]</span> scheme is used.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!-- default theme -->
 
 <style>
