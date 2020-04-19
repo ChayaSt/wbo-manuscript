@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/ChayaSt/wbo-manuscript/tree/gh-pages) branch hosts the contents of this directory at <https://ChayaSt.github.io/wbo-manuscript/>.
-The permalink for this webpage version is <https://ChayaSt.github.io/wbo-manuscript/v/1919e28ed55f44de294533a60761be23399e2c85/>.
+The permalink for this webpage version is <https://ChayaSt.github.io/wbo-manuscript/v/977ed6d53e9f0861a3c2b97a95978955baff5f2a/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://ChayaSt.github.io/wbo-manuscript/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`1919e28ed55f44de294533a60761be23399e2c85`](https://github.com/ChayaSt/wbo-manuscript/commit/1919e28ed55f44de294533a60761be23399e2c85).
+[`977ed6d53e9f0861a3c2b97a95978955baff5f2a`](https://github.com/ChayaSt/wbo-manuscript/commit/977ed6d53e9f0861a3c2b97a95978955baff5f2a).
