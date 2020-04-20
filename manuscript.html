@@ -11,7 +11,7 @@
   <meta name="author" content="Lee-Ping Wang" />
   <meta name="author" content="David L Mobley" />
   <meta name="author" content="John D Chodera" />
-  <meta name="dcterms.date" content="2020-04-19" />
+  <meta name="dcterms.date" content="2020-04-20" />
   <meta name="keywords" content="forcefield, force-field, cheminformatics" />
   <title>Capturing through-bond non-local effects in torsion parameters using fractional bond orders</title>
   <style>
@@ -34,8 +34,8 @@
   <meta name="citation_title" content="Capturing through-bond non-local effects in torsion parameters using fractional bond orders" />
   <meta property="og:title" content="Capturing through-bond non-local effects in torsion parameters using fractional bond orders" />
   <meta property="twitter:title" content="Capturing through-bond non-local effects in torsion parameters using fractional bond orders" />
-  <meta name="dc.date" content="2020-04-19" />
-  <meta name="citation_publication_date" content="2020-04-19" />
+  <meta name="dc.date" content="2020-04-20" />
+  <meta name="citation_publication_date" content="2020-04-20" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -77,9 +77,9 @@
   <meta name="citation_fulltext_html_url" content="https://ChayaSt.github.io/wbo-manuscript/" />
   <meta name="citation_pdf_url" content="https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/" />
-  <meta name="manubot_html_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/" />
-  <meta name="manubot_pdf_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/" />
+  <meta name="manubot_html_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/" />
+  <meta name="manubot_pdf_url_versioned" content="https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -100,10 +100,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/">permalink</a>)
+(<a href="https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/ChayaSt/wbo-manuscript/tree/beaa4c755a79f9bbee02d29748a0f1e2e6525306">ChayaSt/wbo-manuscript@beaa4c7</a>
-on April 19, 2020.
+from <a href="https://github.com/ChayaSt/wbo-manuscript/tree/bd38625884bd4af8b30c50534bb52da552bb47ae">ChayaSt/wbo-manuscript@bd38625</a>
+on April 20, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -637,14 +637,77 @@ In all cases where such changes were observed, the trivalent nitrogens did not f
 In general, when the conformation-dependent WBO scan is not strongly anti-correlated with the QC torsion scan, the QC scan contains through-space steric effects.
 When the conformation-dependent WBO scans are strongly anti-correlated with QC scans, especially when those profiles have loss of symmetry and the torsion atoms include a trivalent nitrogen, the changes in QC torsion profiles relative to QC scans of the same torsion type in different chemical environments are usually a result from through-bond effects and need to be incorporated in classical torsion force field parameters.</p>
 <h3 id="wiberg-bond-orders-can-be-used-to-interpolate-torsion-parameters">2.4 Wiberg bond orders can be used to interpolate torsion parameters</h3>
-<p>Outline for this section
-1. Find the difference potential of the substituted phenyl torsion scans between MM and QM without torison paramters
-2. Cluster on these profiles and create torsion SMARTS for them
-3. Interpolate torsion parameters using ELF10 WBOs</p>
-<p>Figures to add:
-1. Difference potentials clustered for similar profiles
-2. Table of SMARTS patterns for the different torsion types
-3. Figure showing MM torsion scans generated with interpolated torsion parameters.</p>
+<p>Outline for this section</p>
+<ol type="1">
+<li>Find the difference potential of the substituted phenyl torsion scans between MM and QM without torison paramters</li>
+<li>Cluster on these profiles and create torsion SMARTS for them</li>
+<li>Interpolate torsion parameters using ELF10 WBOs</li>
+</ol>
+<p>Figures to add:</p>
+<ol type="1">
+<li>Difference potentials clustered for similar profiles</li>
+<li>Table of SMARTS patterns for the different torsion types</li>
+<li>Figure showing MM torsion scans generated with interpolated torsion parameters.</li>
+</ol>
+<h2 id="introduction-1">3. Introduction</h2>
+<h2 id="detailed-method">5. Detailed method</h2>
+<h3 id="qcarchive-data-generation-and-archiving">5.1 QCArchive data generation and archiving</h3>
+<p>The MolSSI QCArchive <span class="citation" data-cites="QS8UBx4">[<a href="#ref-QS8UBx4" role="doc-biblioref">54</a>]</span> project is a platform for computing, organizing, and sharing quantum chemistry data.
+Computations with this platform automatically record all input and output quantities ensuring the reproducibility of all computations involved.
+In the case of computing with the MolSSI QCArchive instances, all data is automatically hosted and can be queried using the platform.</p>
+<h4 id="submitting-computations-to-qcarchive">5.1.1 Submitting computations to QCArchive</h4>
+<p>All scripts used to submit calculations for the datasets in this paper are in the <a href="https://github.com/openforcefield/qca-dataset-submission"><code>qca-dataset-submission</code></a> GitHub repo.
+The submission scripts used for the kinase inhibitor and subsituted phenyl datasets are listed below.</p>
+<ul>
+<li><a href="https://github.com/openforcefield/qca-dataset-submission/tree/master/2019-11-27-kinase-inhibitor-optimization">Kinase inhibitor dataset</a></li>
+<li><a href="https://github.com/openforcefield/qca-dataset-submission/tree/master/2019-07-25-phenyl-set">Subsituted phenyl dataset</a></li>
+</ul>
+<h4 id="details-on-qc-and-mm-torsion-scans.">5.1.2 Details on QC and MM torsion scans.</h4>
+<p>All torsion scans were computed with the TorsionDrive <span class="citation" data-cites="PBjQ2b0k">[<a href="#ref-PBjQ2b0k" role="doc-biblioref">55</a>]</span> project, which makes choices of new constrained optimizations to evaluate.
+The required constrained optimizations were then computed with the geomeTRIC <span class="citation" data-cites="zyjNwQ0g">[<a href="#ref-zyjNwQ0g" role="doc-biblioref">56</a>]</span> standalone geometry optimizer interfaced to the QCEngine <span class="citation" data-cites="1BYCAutAC">[<a href="#ref-1BYCAutAC" role="doc-biblioref">57</a>]</span> project.</p>
+<p>To ensure a fair comparison between the QC and MM torsion scans, the only change in the torsion scan procedure was to switch out the program, which evaluated the gradient at each step in the geomeTRIC optimization.
+For QC, gradients were computed at B3LYP-D3(BJ) / DZVP with the Psi4 <span class="citation" data-cites="YC6qkEYS">[<a href="#ref-YC6qkEYS" role="doc-biblioref">38</a>]</span> program.
+Our choice of quantum chemical level of theory and basis set was based on benchmarks of quantum chemistry and density functional methods for the accuracy of conformational energies, such as <span class="citation" data-cites="18cMEuIQa">[<a href="#ref-18cMEuIQa" role="doc-biblioref">58</a>]</span>.
+In these studies it was generally observed that B3LYP-D3(BJ) which includes an empirical dispersion correction <span class="citation" data-cites="1Jo5rmoB">[<a href="#ref-1Jo5rmoB" role="doc-biblioref">61</a>]</span> is roughly equivalent to MP2 and the wB97X-V functional with nonlocal dispersion <span class="citation" data-cites="bDaMuroD">[<a href="#ref-bDaMuroD" role="doc-biblioref">62</a>]</span> in terms of accuracy for conformational energies of small molecules (&lt;30 heavy atoms) in the complete basis set limit, i.e. 0.3-0.4 kcal/mol vs. CCSD(T)/CBS gold standard calculations.
+Remarkably, when using the DZVP basis set <span class="citation" data-cites="17YEERBX3">[<a href="#ref-17YEERBX3" role="doc-biblioref">44</a>]</span> which is equivalent to 6-31G* in size and was optimized for DFT calculations, the accuracy of conformational energy calculations was unchanged compared to the much larger def2-TZVPD and def2-QZVP basis sets<span class="citation" data-cites="1CGEPtGug">[<a href="#ref-1CGEPtGug" role="doc-biblioref">63</a>]</span>.
+After verification of the published results locally, we chose B3LYP-D3(BJ)/DZVP as the QM method of choice for torsion drives.
+For molecular mechanics, gradients were run using OpenMM <span class="citation" data-cites="sJWPs71N">[<a href="#ref-sJWPs71N" role="doc-biblioref">64</a>]</span> with the OpenFF parsley Force Field (v1.0.0) <span class="citation" data-cites="j7nbtcyi">[<a href="#ref-j7nbtcyi" role="doc-biblioref">65</a>]</span>.</p>
+<h3 id="calculating-bond-orders">5.2 Calculating Bond orders</h3>
+<h4 id="am1-wbo-and-am1-elf10-wbo">5.2.1 AM1 WBO and AM1 ELF10 WBO</h4>
+<p>To calculate AM1 ELF10 WBO, we used OpenEye’s QUACPAC toolkit <span class="citation" data-cites="OlXUfAPe">[<a href="#ref-OlXUfAPe" role="doc-biblioref">66</a>]</span> (OpenEye version 2019.Apr.2). The
+ELF10 WBO comes along free after an AM1-BCC charge fitting procedure. For ELF10 WBOs generated in this paper, we used the <code>get_charges</code> function
+in the <code>chemi.py</code> module in <code>fragmenter</code> versions v0.0.3 and v0.0.4. To calculate AM1 WBO for individual conformers, we used the <code>OEAssignPartialCharges</code>
+with the <code>OECharges_AM1BCCSym</code> option from the QUACPAC toolkit for each conformer generated with Omega <span class="citation" data-cites="9rOEoE68">[<a href="#ref-9rOEoE68" role="doc-biblioref">67</a>]</span> (OpenEye version 2019.Apr.2)
+which is called for the <code>get_charges</code> function.
+For AM1 WBOs calculated to verify the results from the validation set, we generated conformers using the <code>generate_grid_conformer</code> function in the <code>chemi.py</code> module in <code>fragmenter</code> version v0.0.6.</p>
+<p>We noticed that AM1 ELF10 WBOs can differ significantly across platforms (Linux vs Mac OS) for triple bonds. All results in this paper were calculated on a Linux machine. The
+results might be different on a Mac OS.</p>
+<h4 id="wiberg-bond-orders-in-psi4">5.2.2 Wiberg Bond Orders in Psi4</h4>
+<p>Wiberg-Löwdin bond orders are calculated in Psi4 with the keyword <code>scf_properties: wiberg_lowdin_indices</code> using Psi4 version 1.3. All bond orders were computed during the torsion scan computations.</p>
+<h3 id="datasets">5.3 Datasets</h3>
+<h4 id="kinase-inhibitor-dataset">5.3.1 Kinase inhibitor dataset</h4>
+<p>The kinase inhibitor dataset consists of 43 FDA approved kinase inhibitors (smi files is in the SI) with their Omega generated conformers (OpenEye veriso 2019.Apr.2, <code>generate_conformers</code>
+function in the <code>chemi.py</code> module in <code>fragmenter</code> version v0.0.4). AM1 WBOs were calculated as described above, for all conformers of all 43 kinase inhibitors. B3LYP-D3(BJ) / DZVP Wiberg-Löwdin
+bond orders were calculated for 9 kinase inhibitors and Omega generated conformers after a B3LYP-D3P(BJ) / DZVP geometry optimization. The DFT results are available on QCArchive
+as an <code>OptimizationDataset</code> named <code>Kinase Inhibitors: WBO Distributions</code>.</p>
+<p>The variance of the WBO distributions were calculated using the <code>numpy</code> <span class="citation" data-cites="OiM2HfsY">[<a href="#ref-OiM2HfsY" role="doc-biblioref">68</a>]</span> <code>var</code> function version 1.16.2 and their confidence intervals were calculated using arch <code>IIDBootsrap</code> function <span class="citation" data-cites="15oTe7N42">[<a href="#ref-15oTe7N42" role="doc-biblioref">69</a>]</span> version 4.8.1.
+To calculate the correlation matrix, we calculated the Pearson correlation coefficient with the <code>numpy</code> <span class="citation" data-cites="OiM2HfsY">[<a href="#ref-OiM2HfsY" role="doc-biblioref">68</a>]</span> <code>corrcoef</code> function version 1.16.2.
+Scripts and data used to generate and analyze this dataset are in
+<a href="https://github.com/choderalab/fragmenter_data/tree/master/manuscript-figures/kinase_inhibitors_wbos">github.com/choderalab/fragmenter_data/manuscript-figures/kinase_inhibitors_wbos</a></p>
+<h4 id="subsituted-phenyl-dataset">5.3.2 Subsituted phenyl dataset</h4>
+<p>The substituted phenyl dataset consists of 3,458 substituted phenyl molecules where the substituents chosen to span a large range of electron donating and withdrawing groups.
+We arrived at 3,200 molecules by attaching 26 different functional groups to 5 scaffolds (Figure ??, A) at the X<sub>1</sub> position, and then attach the 26 functional group (and H) at the X<sub>2</sub> position for a total of 133 molecules per functional group (26 * 5 + 3 (for molecules with H at the X<sub>2</sub> position)).
+The AM1 ELF10 WBOs were calculated as described above.</p>
+<p>We selected molecules for QC torsion scans as follows:
+1. From the 26 functional groups, we only selected molecules from 18 functional groups, skipping X<sub>1</sub>s that either did not have a rotatable bond (fluorine, chlorine, iodine, bromine, nitrile, oxygen), were too congested (triflouromethyl, trimethylamonium) or where the WBOs on the bonds attaching X<sub>1</sub> to the phenyl ring did not change much
+with different chemical group at the X<sub>2</sub> position (methyl).
+2. For the 18 functional groups, we chose molecules that were evenly spaced along the WBO range of that functional group, up to 15 molecules.
+While all the skipped functional groups for X<sub>1</sub> were allowed to be at X<sub>2</sub>, we did not include the negative oxygen at X<sub>2</sub> because OpenFF have not yet benchmarked the level of theory to use for anions.
+3. After selection, we had 140 molecules that we submitted to QCArchive for both QC and MM torsion scan.
+The dataset is available on QCArchive as a <code>TorsionDriveDataset</code> named <code>OpenFF Subsituted Phenyl Set 1</code>.
+This dataset also includes the biphenyl torsion scans shown in Figure <a href="#fig:biphenyls">1</a>.</p>
+<p>Scripts used to generate and analyze this dataset can be found in <a href="https://github.com/choderalab/fragmenter_data/tree/master/phenyl_benchmark">github.com/choderalab/fragmenter_data/phenyl_benchmark</a></p>
+<p>There is another subsituted phenyl set on QCArchive whose results are not shown in this paper because it was run with a different level of theory as the default OpenFF level of theory, included anions which we did not yet decide how to handle and did not have good coverage of WBO ranges.</p>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
@@ -963,14 +1026,105 @@ Corwin. Hansch, A. Leo, R. W. Taft<br />
 <em>Chemical Reviews</em> (1991-03) <a href="https://doi.org/dwwqnk">https://doi.org/dwwqnk</a><br />
 DOI: <a href="https://doi.org/10.1021/cr00002a004">10.1021/cr00002a004</a></p>
 </div>
+<div id="ref-QS8UBx4">
+<p>54. <strong>Perspective: Computational chemistry software and its advancement as illustrated through three grand challenge cases for molecular science</strong><br />
+Anna Krylov, Theresa L. Windus, Taylor Barnes, Eliseo Marin-Rimoldi, Jessica A. Nash, Benjamin Pritchard, Daniel G. A. Smith, Doaa Altarawy, Paul Saxe, Cecilia Clementi, … Teresa Head-Gordon<br />
+<em>The Journal of Chemical Physics</em> (2018-11-14) <a href="https://doi.org/ggjxmj">https://doi.org/ggjxmj</a><br />
+DOI: <a href="https://doi.org/10.1063/1.5052551">10.1063/1.5052551</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30441927">30441927</a></p>
+</div>
+<div id="ref-PBjQ2b0k">
+<p>55. <strong>lpwgroup/torsiondrive</strong><br />
+lpwgroup<br />
+(2020-02-24) <a href="https://github.com/lpwgroup/torsiondrive">https://github.com/lpwgroup/torsiondrive</a></p>
+</div>
+<div id="ref-zyjNwQ0g">
+<p>56. <strong>leeping/geomeTRIC</strong><br />
+Lee-Ping<br />
+(2020-04-19) <a href="https://github.com/leeping/geomeTRIC">https://github.com/leeping/geomeTRIC</a></p>
+</div>
+<div id="ref-1BYCAutAC">
+<p>57. <strong>MolSSI/QCEngine</strong><br />
+The Molecular Science Software Institute<br />
+(2020-03-04) <a href="https://github.com/MolSSI/QCEngine">https://github.com/MolSSI/QCEngine</a></p>
+</div>
+<div id="ref-18cMEuIQa">
+<p>58. <strong>Benchmark <em>ab Initio</em> Conformational Energies for the Proteinogenic Amino Acids through Explicitly Correlated Methods. Assessment of Density Functional Methods</strong><br />
+Manoj K. Kesharwani, Amir Karton, Jan M. L. Martin<br />
+<em>Journal of Chemical Theory and Computation</em> (2015-12-22) <a href="https://doi.org/f764qf">https://doi.org/f764qf</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jctc.5b01066">10.1021/acs.jctc.5b01066</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26653705">26653705</a></p>
+</div>
+<div id="ref-5r70efN6">
+<p>59. <strong>Toward Accurate Conformational Energies of Smaller Peptides and Medium-Sized Macrocycles: MPCONF196 Benchmark Energy Data Set</strong><br />
+Jan Řezáč, Daniel Bím, Ondrej Gutten, Lubomír Rulíšek<br />
+<em>Journal of Chemical Theory and Computation</em> (2018-02-20) <a href="https://doi.org/gc7x27">https://doi.org/gc7x27</a><br />
+DOI: <a href="https://doi.org/10.1021/acs.jctc.7b01074">10.1021/acs.jctc.7b01074</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29461829">29461829</a></p>
+</div>
+<div id="ref-W5W98nc6">
+<p>60. <strong>A look at the density functional theory zoo with the advanced GMTKN55 database for general main group thermochemistry, kinetics and noncovalent interactions</strong><br />
+Lars Goerigk, Andreas Hansen, Christoph Bauer, Stephan Ehrlich, Asim Najibi, Stefan Grimme<br />
+<em>Physical Chemistry Chemical Physics</em> (2017) <a href="https://doi.org/ggk3cz">https://doi.org/ggk3cz</a><br />
+DOI: <a href="https://doi.org/10.1039/c7cp04913g">10.1039/c7cp04913g</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29110012">29110012</a></p>
+</div>
+<div id="ref-1Jo5rmoB">
+<p>61. <strong>Exchange-hole dipole moment and the dispersion interaction revisited</strong><br />
+Axel D. Becke, Erin R. Johnson<br />
+<em>The Journal of Chemical Physics</em> (2007-10-21) <a href="https://doi.org/fqf57s">https://doi.org/fqf57s</a><br />
+DOI: <a href="https://doi.org/10.1063/1.2795701">10.1063/1.2795701</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/17949133">17949133</a></p>
+</div>
+<div id="ref-bDaMuroD">
+<p>62. <strong>ωB97X-V: A 10-parameter, range-separated hybrid, generalized gradient approximation density functional with nonlocal correlation, designed by a survival-of-the-fittest strategy</strong><br />
+Narbe Mardirossian, Martin Head-Gordon<br />
+<em>Physical Chemistry Chemical Physics</em> (2014) <a href="https://doi.org/gf9n3d">https://doi.org/gf9n3d</a><br />
+DOI: <a href="https://doi.org/10.1039/c3cp54374a">10.1039/c3cp54374a</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/24430168">24430168</a></p>
+</div>
+<div id="ref-1CGEPtGug">
+<p>63. <strong>Balanced basis sets of split valence, triple zeta valence and quadruple zeta valence quality for H to Rn: Design and assessment of accuracy</strong><br />
+Florian Weigend, Reinhart Ahlrichs<br />
+<em>Physical Chemistry Chemical Physics</em> (2005) <a href="https://doi.org/b56gv3">https://doi.org/b56gv3</a><br />
+DOI: <a href="https://doi.org/10.1039/b508541a">10.1039/b508541a</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/16240044">16240044</a></p>
+</div>
+<div id="ref-sJWPs71N">
+<p>64. <strong>OpenMM 7: Rapid development of high performance algorithms for molecular dynamics</strong><br />
+Peter Eastman, Jason Swails, John D. Chodera, Robert T. McGibbon, Yutong Zhao, Kyle A. Beauchamp, Lee-Ping Wang, Andrew C. Simmonett, Matthew P. Harrigan, Chaya D. Stern, … Vijay S. Pande<br />
+<em>PLOS Computational Biology</em> (2017-07-26) <a href="https://doi.org/gbppkv">https://doi.org/gbppkv</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pcbi.1005659">10.1371/journal.pcbi.1005659</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28746339">28746339</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5549999">PMC5549999</a></p>
+</div>
+<div id="ref-j7nbtcyi">
+<p>65. <strong>openforcefield/openforcefields: Version 1.0.0 “Parsley”</strong><br />
+Jeff Wagner<br />
+<em>Zenodo</em> (2019-10-12) <a href="https://doi.org/ggjgjk">https://doi.org/ggjgjk</a><br />
+DOI: <a href="https://doi.org/10.5281/zenodo.3483227">10.5281/zenodo.3483227</a></p>
+</div>
+<div id="ref-OlXUfAPe">
+<p>66. <strong>QUACPAC | Tautomer / Protomer Enumeration &amp; Charge Assignment | Database Preparation</strong><br />
+OpenEye Scientific Software<br />
+<a href="https://www.eyesopen.com/quacpac">https://www.eyesopen.com/quacpac</a></p>
+</div>
+<div id="ref-9rOEoE68">
+<p>67. <strong>OMEGA | Multi-Conformer Structure Databases | Database Preparation | OpenEye Scientific</strong><br />
+OpenEye Scientific Software<br />
+<a href="https://www.eyesopen.com/omega">https://www.eyesopen.com/omega</a></p>
+</div>
+<div id="ref-OiM2HfsY">
+<p>68. <strong>The NumPy Array: A Structure for Efficient Numerical Computation</strong><br />
+Stéfan van der Walt, S Chris Colbert, Gaël Varoquaux<br />
+<em>Computing in Science &amp; Engineering</em> (2011-03) <a href="https://doi.org/d8k4p9">https://doi.org/d8k4p9</a><br />
+DOI: <a href="https://doi.org/10.1109/mcse.2011.37">10.1109/mcse.2011.37</a></p>
+</div>
+<div id="ref-15oTe7N42">
+<p>69. <strong>bashtage/arch: Release 4.8.1</strong><br />
+Kevin Sheppard, Stanislav Khrapov, Gábor Lipták, Rob Capellini, Esvhd, Hugle, JPN, Xavier RENE-CORAIL, Michael E. Rose, Jbrockmendel<br />
+<em>Zenodo</em> (2019-03-28) <a href="https://doi.org/ggjfwh">https://doi.org/ggjfwh</a><br />
+DOI: <a href="https://doi.org/10.5281/zenodo.2613877">10.5281/zenodo.2613877</a></p>
+</div>
 <div id="ref-19YdfyNRY">
-<p>54. <strong>Approximate Self‐Consistent Molecular Orbital Theory. I. Invariant Procedures</strong><br />
+<p>70. <strong>Approximate Self‐Consistent Molecular Orbital Theory. I. Invariant Procedures</strong><br />
 J. A. Pople, D. P. Santry, G. A. Segal<br />
 <em>The Journal of Chemical Physics</em> (1965-11-15) <a href="https://doi.org/fg5fkq">https://doi.org/fg5fkq</a><br />
 DOI: <a href="https://doi.org/10.1063/1.1701475">10.1063/1.1701475</a></p>
 </div>
 <div id="ref-12mptWjWL">
-<p>55. <strong>Corrected small basis set Hartree-Fock method for large systems</strong><br />
+<p>71. <strong>Corrected small basis set Hartree-Fock method for large systems</strong><br />
 Rebecca Sure, Stefan Grimme<br />
 <em>Journal of Computational Chemistry</em> (2013-07-15) <a href="https://doi.org/f42979">https://doi.org/f42979</a><br />
 DOI: <a href="https://doi.org/10.1002/jcc.23317">10.1002/jcc.23317</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23670872">23670872</a></p>
@@ -978,7 +1132,7 @@ DOI: <a href="https://doi.org/10.1002/jcc.23317">10.1002/jcc.23317</a> · PMID: 
 </div>
 <h2 class="page_break_before" id="SI">Supporting Information</h2>
 <h3 id="the-mayer-bond-order-mbo-extends-the-wiberg-bond-order-wbo-to-non-minimal-basis-sets">The Mayer bond order (MBO) extends the Wiberg bond order (WBO) to non-minimal basis sets</h3>
-<p>The WBO was developed within Pople’s complete neglect of differential overlap (CNDO) formalism <span class="citation" data-cites="19YdfyNRY BES2Ksiq">[<a href="#ref-BES2Ksiq" role="doc-biblioref">28</a>,<a href="#ref-19YdfyNRY" role="doc-biblioref">54</a>]</span> and is defined as:</p>
+<p>The WBO was developed within Pople’s complete neglect of differential overlap (CNDO) formalism <span class="citation" data-cites="19YdfyNRY BES2Ksiq">[<a href="#ref-BES2Ksiq" role="doc-biblioref">28</a>,<a href="#ref-19YdfyNRY" role="doc-biblioref">70</a>]</span> and is defined as:</p>
 <p><span class="math display">\[\begin{equation}
     W_{AB} = \sum_{\mu \in A}\sum_{\nu \in B} |D_{\mu \nu}|^2
 \end{equation}\]</span>{#eq:wiberg}</p>
@@ -1011,7 +1165,7 @@ Here we compare WBO and MBOs at different levels of theory.</p>
 <p>Both the WBO and MBO are functions of electron density which is conformation dependent, so they will change with conformation.
 As we have shown in <a href="#fig:wbo_var_corr">2</a>, conjugated bonds have higher variance than non-conjugated bonds.
 Different QC methods and ways of calculating bond orders result in differences in bond order values and conformation-dependent variance.
-In Figure <a href="#fig:wbo-mbo-comparison">7</a> we compare AM1 <span class="citation" data-cites="tnSqySMX">[<a href="#ref-tnSqySMX" role="doc-biblioref">36</a>]</span> WBOs, HF-3c <span class="citation" data-cites="12mptWjWL">[<a href="#ref-12mptWjWL" role="doc-biblioref">55</a>]</span> MBOs and WBOs, and B3LYP(BJ)/DZVP <span class="citation" data-cites="YPDz9hB3 17YEERBX3 flKRoCNc CqesmIsy">[<a href="#ref-17YEERBX3" role="doc-biblioref">44</a>,<a href="#ref-flKRoCNc" role="doc-biblioref">45</a>,<a href="#ref-YPDz9hB3" role="doc-biblioref">46</a>,<a href="#ref-CqesmIsy" role="doc-biblioref">47</a>]</span> MBOs and WBOs.
+In Figure <a href="#fig:wbo-mbo-comparison">7</a> we compare AM1 <span class="citation" data-cites="tnSqySMX">[<a href="#ref-tnSqySMX" role="doc-biblioref">36</a>]</span> WBOs, HF-3c <span class="citation" data-cites="12mptWjWL">[<a href="#ref-12mptWjWL" role="doc-biblioref">71</a>]</span> MBOs and WBOs, and B3LYP(BJ)/DZVP <span class="citation" data-cites="YPDz9hB3 17YEERBX3 flKRoCNc CqesmIsy">[<a href="#ref-17YEERBX3" role="doc-biblioref">44</a>,<a href="#ref-flKRoCNc" role="doc-biblioref">45</a>,<a href="#ref-YPDz9hB3" role="doc-biblioref">46</a>,<a href="#ref-CqesmIsy" role="doc-biblioref">47</a>]</span> MBOs and WBOs.
 Figure <a href="#fig:wbo-mbo-comparison">7</a> <strong>A</strong> shows Gefitinib, a kinase inhibitors, with its rotatable bonds highlighted to correspond to the colors of the distributions shown in the other panels of Figure <a href="#fig:wbo-mbo-comparison">7</a>.
 The bond order distributions shown in Figure <a href="#fig:wbo-mbo-comparison">7</a> were calculated over 232 Omega <span class="citation" data-cites="1G1ccz54w">[<a href="#ref-1G1ccz54w" role="doc-biblioref">43</a>]</span> generated conformers of Gefitinib which were then geometry optimized with the methods used to calculate bond orders.</p>
 <p>For AM1 we only calculated WBOs because the MBO and WBO are equivalent at that level of theory.
@@ -1058,7 +1212,7 @@ Optimized conformations and their WBOs are on QCArchive (<code>OptimizationDatas
 </div>
 <div id="fig:si_wbo_dist" class="fignos">
 <figure>
-<img src="images/SI-WBO-dist.svg" alt="" /><figcaption><span>Figure 10:</span> <strong>Variance and correlations of AM1 Wiberg bond order distributions with respect to conformations are higher for conjugated bonds</strong>
+<img src="images/SI-gefitinib-wbo-dist.svg" alt="" /><figcaption><span>Figure 10:</span> <strong>Variance and correlations of AM1 Wiberg bond order distributions with respect to conformations are higher for conjugated bonds</strong>
 The trend seen in <a href="#fig:wbo_var_corr">2</a> for higher level of QC theory (B3LYP-D3(BJ) / DZVP) is also observed at AM1.
 <strong>[A]</strong> Gifitnib with its rotatable bonds highlighted. <strong>[B]</strong> WBO distributions over 232 conformations of the highlighted bonds. The variance
 and their 95% CI is shown. <strong>[C]</strong> Pearson correlation coefficients for WBOs in every bond against all other bonds with respect to conformations.</figcaption>

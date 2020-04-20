@@ -9,8 +9,8 @@ author-meta:
 - John D Chodera
 bibliography:
 - content/manual-references.json
-date-meta: '2020-04-19'
-header-includes: "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta name=\"dc.title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta name=\"citation_title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta property=\"og:title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta property=\"twitter:title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta name=\"dc.date\" content=\"2020-04-19\" />\n<meta name=\"citation_publication_date\" content=\"2020-04-19\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Chaya D Stern\" />\n<meta name=\"citation_author_institution\" content=\"Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-6200-3993\" />\n<meta name=\"twitter:creator\" content=\"@SternChaya\" />\n<meta name=\"citation_author\" content=\"Christopher I Bayly\" />\n<meta name=\"citation_author_institution\" content=\"OpenEye Scientific Software\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-9145-6457\" />\n<meta name=\"citation_author\" content=\"Daniel G A Smith\" />\n<meta name=\"citation_author_institution\" content=\"The Molecular Sciences Software Institute, Blacksburg, Virginia 24060 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-8626-0900\" />\n<meta name=\"twitter:creator\" content=\"@dga_smith\" />\n<meta name=\"citation_author\" content=\"Josh Fass\" />\n<meta name=\"citation_author_institution\" content=\"Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3719-266X\" />\n<meta name=\"twitter:creator\" content=\"@maxentile\" />\n<meta name=\"citation_author\" content=\"Lee-Ping Wang\" />\n<meta name=\"citation_author_institution\" content=\"Department of Chemistry, University of California, Davis, Califnornia 95616 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3072-9946\" />\n<meta name=\"citation_author\" content=\"David L Mobley\" />\n<meta name=\"citation_author_institution\" content=\"Departments of Pharmaceutical Sciences and Chemistry, University of California, Irvine, California 92697\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0002-1083-5533\" />\n<meta name=\"twitter:creator\" content=\"@davidmobley\" />\n<meta name=\"citation_author\" content=\"John D Chodera\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_institution\" content=\"BIH Einstein Visiting Professor, Charit\xE9 Universit\xE4tsmedizin, Berlin\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-0542-119X\" />\n<meta name=\"twitter:creator\" content=\"@jchodera\" />\n<link rel=\"canonical\" href=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta property=\"og:url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta property=\"twitter:url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta name=\"citation_pdf_url\" content=\"https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->"
+date-meta: '2020-04-20'
+header-includes: "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta name=\"dc.title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta name=\"citation_title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta property=\"og:title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta property=\"twitter:title\" content=\"Capturing through-bond non-local effects in torsion parameters using fractional bond orders\" />\n<meta name=\"dc.date\" content=\"2020-04-20\" />\n<meta name=\"citation_publication_date\" content=\"2020-04-20\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Chaya D Stern\" />\n<meta name=\"citation_author_institution\" content=\"Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-6200-3993\" />\n<meta name=\"twitter:creator\" content=\"@SternChaya\" />\n<meta name=\"citation_author\" content=\"Christopher I Bayly\" />\n<meta name=\"citation_author_institution\" content=\"OpenEye Scientific Software\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-9145-6457\" />\n<meta name=\"citation_author\" content=\"Daniel G A Smith\" />\n<meta name=\"citation_author_institution\" content=\"The Molecular Sciences Software Institute, Blacksburg, Virginia 24060 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-8626-0900\" />\n<meta name=\"twitter:creator\" content=\"@dga_smith\" />\n<meta name=\"citation_author\" content=\"Josh Fass\" />\n<meta name=\"citation_author_institution\" content=\"Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3719-266X\" />\n<meta name=\"twitter:creator\" content=\"@maxentile\" />\n<meta name=\"citation_author\" content=\"Lee-Ping Wang\" />\n<meta name=\"citation_author_institution\" content=\"Department of Chemistry, University of California, Davis, Califnornia 95616 USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3072-9946\" />\n<meta name=\"citation_author\" content=\"David L Mobley\" />\n<meta name=\"citation_author_institution\" content=\"Departments of Pharmaceutical Sciences and Chemistry, University of California, Irvine, California 92697\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0002-1083-5533\" />\n<meta name=\"twitter:creator\" content=\"@davidmobley\" />\n<meta name=\"citation_author\" content=\"John D Chodera\" />\n<meta name=\"citation_author_institution\" content=\"Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA\" />\n<meta name=\"citation_author_institution\" content=\"BIH Einstein Visiting Professor, Charit\xE9 Universit\xE4tsmedizin, Berlin\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-0542-119X\" />\n<meta name=\"twitter:creator\" content=\"@jchodera\" />\n<link rel=\"canonical\" href=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta property=\"og:url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta property=\"twitter:url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://ChayaSt.github.io/wbo-manuscript/\" />\n<meta name=\"citation_pdf_url\" content=\"https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://ChayaSt.github.io/wbo-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->"
 keywords:
 - forcefield
 - force-field
@@ -30,10 +30,10 @@ title: Capturing through-bond non-local effects in torsion parameters using frac
 
 <small><em>
 This manuscript
-([permalink](https://ChayaSt.github.io/wbo-manuscript/v/beaa4c755a79f9bbee02d29748a0f1e2e6525306/))
+([permalink](https://ChayaSt.github.io/wbo-manuscript/v/bd38625884bd4af8b30c50534bb52da552bb47ae/))
 was automatically generated
-from [ChayaSt/wbo-manuscript@beaa4c7](https://github.com/ChayaSt/wbo-manuscript/tree/beaa4c755a79f9bbee02d29748a0f1e2e6525306)
-on April 19, 2020.
+from [ChayaSt/wbo-manuscript@bd38625](https://github.com/ChayaSt/wbo-manuscript/tree/bd38625884bd4af8b30c50534bb52da552bb47ae)
+on April 20, 2020.
 </em></small>
 
 ## Authors
@@ -535,15 +535,98 @@ When the conformation-dependent WBO scans are strongly anti-correlated with QC s
 ### 2.4 Wiberg bond orders can be used to interpolate torsion parameters
 
 Outline for this section
+
 1. Find the difference potential of the substituted phenyl torsion scans between MM and QM without torison paramters
 2. Cluster on these profiles and create torsion SMARTS for them
 3. Interpolate torsion parameters using ELF10 WBOs
 
 Figures to add:
+
 1. Difference potentials clustered for similar profiles
 2. Table of SMARTS patterns for the different torsion types
 3. Figure showing MM torsion scans generated with interpolated torsion parameters.
 
+
+
+## 3. Introduction
+
+
+## 5. Detailed method
+
+### 5.1 QCArchive data generation and archiving
+The MolSSI QCArchive [@doi:10.1063/1.5052551] project is a platform for computing, organizing, and sharing quantum chemistry data.
+Computations with this platform automatically record all input and output quantities ensuring the reproducibility of all computations involved.
+In the case of computing with the MolSSI QCArchive instances, all data is automatically hosted and can be queried using the platform.
+
+#### 5.1.1 Submitting computations to QCArchive
+
+All scripts used to submit calculations for the datasets in this paper are in the [`qca-dataset-submission`](https://github.com/openforcefield/qca-dataset-submission) GitHub repo.
+The submission scripts used for the kinase inhibitor and subsituted phenyl datasets are listed below.
+
+- [Kinase inhibitor dataset](https://github.com/openforcefield/qca-dataset-submission/tree/master/2019-11-27-kinase-inhibitor-optimization)
+- [Subsituted phenyl dataset](https://github.com/openforcefield/qca-dataset-submission/tree/master/2019-07-25-phenyl-set)
+
+#### 5.1.2 Details on QC and MM torsion scans.
+
+All torsion scans were computed with the TorsionDrive [@url:https://github.com/lpwgroup/torsiondrive] project, which makes choices of new constrained optimizations to evaluate.
+The required constrained optimizations were then computed with the geomeTRIC [@url:https://github.com/leeping/geomeTRIC] standalone geometry optimizer interfaced to the QCEngine [@url:https://github.com/molssi/qcengine] project.
+
+To ensure a fair comparison between the QC and MM torsion scans, the only change in the torsion scan procedure was to switch out the program, which evaluated the gradient at each step in the geomeTRIC optimization.
+For QC, gradients were computed at B3LYP-D3(BJ) / DZVP with the Psi4 [@doi:10.1021/acs.jctc.7b00174] program.
+Our choice of quantum chemical level of theory and basis set was based on benchmarks of quantum chemistry and density functional methods for the accuracy of conformational energies, such as [@doi:10.1021/acs.jctc.5b01066, @doi:10.1021/acs.jctc.7b01074, @doi:10.1039/C7CP04913G].
+In these studies it was generally observed that B3LYP-D3(BJ) which includes an empirical dispersion correction [@doi:10.1063/1.2795701, @doi:10.1002/jcc.21759] is roughly equivalent to MP2 and the wB97X-V functional with nonlocal dispersion [@doi:10.1039/C3CP54374A] in terms of accuracy for conformational energies of small molecules (<30 heavy atoms) in the complete basis set limit, i.e. 0.3-0.4 kcal/mol vs. CCSD(T)/CBS gold standard calculations.
+Remarkably, when using the DZVP basis set [@doi:10.1139/v92-079] which is equivalent to 6-31G* in size and was optimized for DFT calculations, the accuracy of conformational energy calculations was unchanged compared to the much larger def2-TZVPD and def2-QZVP basis sets[@doi:10.1039/B508541A].
+After verification of the published results locally, we chose B3LYP-D3(BJ)/DZVP as the QM method of choice for torsion drives.
+For molecular mechanics, gradients were run using OpenMM [@doi:10.1371/journal.pcbi.1005659] with the OpenFF parsley Force Field (v1.0.0) [@doi:10.5281/zenodo.3483227].
+
+### 5.2 Calculating Bond orders
+
+
+#### 5.2.1 AM1 WBO and AM1 ELF10 WBO
+To calculate AM1 ELF10 WBO, we used OpenEye's QUACPAC toolkit [@url:https://www.eyesopen.com/quacpac] (OpenEye version 2019.Apr.2). The
+ELF10 WBO comes along free after an AM1-BCC charge fitting procedure. For ELF10 WBOs generated in this paper, we used the `get_charges` function
+in the `chemi.py` module in `fragmenter` versions v0.0.3 and v0.0.4. To calculate AM1 WBO for individual conformers, we used the `OEAssignPartialCharges`
+with the `OECharges_AM1BCCSym` option from the QUACPAC toolkit for each conformer generated with Omega [@url:https://www.eyesopen.com/omega] (OpenEye version 2019.Apr.2)
+which is called for the `get_charges` function.
+For AM1 WBOs calculated to verify the results from the validation set, we generated conformers using the `generate_grid_conformer` function in the `chemi.py` module in `fragmenter` version v0.0.6.
+
+We noticed that AM1 ELF10 WBOs can differ significantly across platforms (Linux vs Mac OS) for triple bonds. All results in this paper were calculated on a Linux machine. The
+results might be different on a Mac OS.
+
+#### 5.2.2 Wiberg Bond Orders in Psi4
+
+Wiberg-Löwdin bond orders are calculated in Psi4 with the keyword `scf_properties: wiberg_lowdin_indices` using Psi4 version 1.3. All bond orders were computed during the torsion scan computations.
+
+### 5.3 Datasets
+
+#### 5.3.1 Kinase inhibitor dataset
+The kinase inhibitor dataset consists of 43 FDA approved kinase inhibitors (smi files is in the SI) with their Omega generated conformers (OpenEye veriso 2019.Apr.2, `generate_conformers`
+function in the `chemi.py` module in `fragmenter` version v0.0.4). AM1 WBOs were calculated as described above, for all conformers of all 43 kinase inhibitors. B3LYP-D3(BJ) / DZVP Wiberg-Löwdin
+bond orders were calculated for 9 kinase inhibitors and Omega generated conformers after a B3LYP-D3P(BJ) / DZVP geometry optimization. The DFT results are available on QCArchive
+as an `OptimizationDataset` named `Kinase Inhibitors: WBO Distributions`.
+
+The variance of the WBO distributions were calculated using the `numpy` [@doi:10.1109/MCSE.2011.37] `var` function version 1.16.2 and their confidence intervals were calculated using arch `IIDBootsrap` function [@doi:10.5281/zenodo.2613877] version 4.8.1.
+To calculate the correlation matrix, we calculated the Pearson correlation coefficient with the `numpy` [@doi:10.1109/MCSE.2011.37] `corrcoef` function version 1.16.2.
+Scripts and data used to generate and analyze this dataset are in
+[github.com/choderalab/fragmenter_data/manuscript-figures/kinase_inhibitors_wbos](https://github.com/choderalab/fragmenter_data/tree/master/manuscript-figures/kinase_inhibitors_wbos)
+
+#### 5.3.2 Subsituted phenyl dataset
+The substituted phenyl dataset consists of 3,458 substituted phenyl molecules where the substituents chosen to span a large range of electron donating and withdrawing groups.
+We arrived at 3,200 molecules by attaching 26 different functional groups to 5 scaffolds (Figure @fig:subsituted_phenyls, A) at the X~1~ position, and then attach the 26 functional group (and H) at the X~2~ position for a total of 133 molecules per functional group (26 * 5  + 3 (for molecules with H at the X~2~ position)).
+The AM1 ELF10 WBOs were calculated as described above.
+
+We selected molecules for QC torsion scans as follows:
+1. From the 26 functional groups, we only selected molecules from 18 functional groups, skipping X~1~s that either did not have a rotatable bond (fluorine, chlorine, iodine, bromine, nitrile, oxygen), were too congested (triflouromethyl, trimethylamonium) or where the WBOs on the bonds attaching X~1~ to the phenyl ring did not change much
+with different chemical group at the X~2~ position (methyl).
+2. For the 18 functional groups, we chose molecules that were evenly spaced along the WBO range of that functional group, up to 15 molecules.
+While all the skipped functional groups for X~1~ were allowed to be at X~2~, we did not include the negative oxygen at X~2~ because OpenFF have not yet benchmarked the level of theory to use for anions.
+3. After selection, we had 140 molecules that we submitted to QCArchive for both QC and MM torsion scan.
+The dataset is available on QCArchive as a `TorsionDriveDataset` named `OpenFF Subsituted Phenyl Set 1`.
+This dataset also includes the biphenyl torsion scans shown in Figure @fig:biphenyls.
+
+Scripts used to generate and analyze this dataset can be found in [github.com/choderalab/fragmenter_data/phenyl_benchmark](https://github.com/choderalab/fragmenter_data/tree/master/phenyl_benchmark)
+
+There is another subsituted phenyl set on QCArchive whose results are not shown in this paper because it was run with a different level of theory as the default OpenFF level of theory, included anions which we did not yet decide how to handle and did not have good coverage of WBO ranges.
 
 
 ## References {.page_break_before}
@@ -646,7 +729,7 @@ Optimized conformations and their WBOs are on QCArchive (`OptimizationDataset`, 
 ![**Variance and correlations of AM1 Wiberg bond order distributions with respect to conformations are higher for conjugated bonds**
 The trend seen in @fig:wbo_var_corr for higher level of QC theory (B3LYP-D3(BJ) / DZVP) is also observed at AM1.
 **[A]** Gifitnib with its rotatable bonds highlighted. **[B]** WBO distributions over 232 conformations of the highlighted bonds. The variance
-and their 95% CI is shown. **[C]** Pearson correlation coefficients for WBOs in every bond against all other bonds with respect to conformations.](images/SI-WBO-dist.svg){#fig:si_wbo_dist}
+and their 95% CI is shown. **[C]** Pearson correlation coefficients for WBOs in every bond against all other bonds with respect to conformations.](images/SI-gefitinib-wbo-dist.svg){#fig:si_wbo_dist}
 
 ![**Druglike molecules used to calculate ELF10 AM1 WBOs**
 This set of molecules were selected to cover bonds of different types and multiplicities](images/druglike_mols_for_wbo_dist_4.svg){#fig:wbo_dist_mols}
