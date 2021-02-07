@@ -21,6 +21,16 @@ author_info:
       - MolSSI NSF ACI-1547580
       - NSF CHE-1738979 # Bayesian force field grant
   -
+    gthub: jmaat
+    name: Jessica Maat
+    initials: JM
+    ocrid:
+    twiter:
+    email:
+    affiliations:
+      - Departments of Pharmaceutical Sciences and Chemistry, University of California, Irvine, California 92697
+    funders:
+  -
     github: cbayly13
     name: Christopher I Bayly
     initials: CIB
@@ -40,18 +50,6 @@ author_info:
     funders:
       - NSF OAC-1547580 # MolSSI
       - Open Force Field Consortium
-  -
-    github: maxentile
-    name: Josh Fass
-    initials: JF
-    orcid: 0000-0003-3719-266X
-    twitter: maxentile
-    email: josh.fass@choderalab.org
-    affiliations:
-      - Tri-Insitutional PhD Program in Chemical Biology, Memorial Sloan Kettering Cancer Center, New York, New York 10065, USA
-      - Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, New York 10065 USA
-    funders:
-      - NSF CHE-1738979
   -
     github: leeping
     name: Lee-Ping Wang
